@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Enum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="5f374c16-3b26-4335-9b61-3b3c1376ad6f">
+  <producedTypes>
+    <refType typeId="b342849a-1d1c-45b7-99a3-c25f7380d287" valueTypeId="68871a26-3db9-4440-9a9c-2643c2a01499"/>
+    <listType typeId="928d745e-6d26-47b7-a461-c8480ab0d500" valueTypeId="976ac1d8-6bbe-4286-adc0-213182a4aef2"/>
+    <managerType typeId="0fb0f123-de37-484f-bf9e-edf35e88f955" valueTypeId="f3c68e79-3b8e-42f3-971f-71abf468067e"/>
+  </producedTypes>
+  <name>МетодHTTP</name>
+  <synonym>
+    <key>ru</key>
+    <value>Метод HTTP</value>
+  </synonym>
+  <synonym>
+    <key></key>
+    <value>Метод HTTP</value>
+  </synonym>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Order</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Ref</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <quickChoice>true</quickChoice>
+  <choiceMode>BothWays</choiceMode>
+  <enumValues uuid="10928dea-5aa5-4f42-bda9-3cae56ef4283">
+    <name>DELETE</name>
+    <synonym>
+      <key>ru</key>
+      <value>DELETE</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="ceedc9c1-bc49-49e5-b814-523ec98e5438">
+    <name>GET</name>
+    <synonym>
+      <key>ru</key>
+      <value>GET</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="d539aa64-858b-4340-8910-618533380d47">
+    <name>HEAD</name>
+    <synonym>
+      <key>ru</key>
+      <value>HEAD</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="4b1b3fdd-7312-43db-85f2-9c74b72e624a">
+    <name>PATCH</name>
+    <synonym>
+      <key>ru</key>
+      <value>PATCH</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="92a17f13-e308-4e98-9997-25ee946c79aa">
+    <name>POST</name>
+    <synonym>
+      <key>ru</key>
+      <value>POST</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="7b11534d-956c-46f0-ba07-8036e6de6c77">
+    <name>PUT</name>
+    <synonym>
+      <key>ru</key>
+      <value>PUT</value>
+    </synonym>
+  </enumValues>
+</mdclass:Enum>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonCommand xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="237ea41c-ce81-4cf2-b89c-fdc0bd30f611">
+  <name>OneSniffer_ЛогиТрафика</name>
+  <synonym>
+    <key></key>
+    <value>One sniffer логи трафика</value>
+  </synonym>
+  <synonym>
+    <key>ru</key>
+    <value>Логи трафика (OneSniffer)</value>
+  </synonym>
+  <group>ActionsPanelTools</group>
+  <commandParameterType/>
+  <representation>Auto</representation>
+</mdclass:CommonCommand>

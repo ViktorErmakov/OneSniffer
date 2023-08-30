@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" xmlns:mdclassExtension="http://g5.1c.ru/v8/dt/metadata/mdclass/extension" uuid="ffa106e8-d82d-4867-8e98-92449269e938">
+  <name>OneSniffer</name>
+  <synonym>
+    <key></key>
+    <value>One sniffer</value>
+  </synonym>
+  <synonym>
+    <key>ru</key>
+    <value>OneSniffer</value>
+  </synonym>
+  <objectBelonging>Adopted</objectBelonging>
+  <extension xsi:type="mdclassExtension:ConfigurationExtension">
+    <mainSectionCommandInterface>Extended</mainSectionCommandInterface>
+  </extension>
+  <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="162f5eab-9011-4208-bece-0f148d760edd"/>
+  <containedObjects classId="9fcd25a0-4822-11d4-9414-008048da11f9" objectId="fc957bbb-edf7-4b17-9c5d-a999be7fd048"/>
+  <containedObjects classId="e3687481-0a87-462c-a166-9f34594f9bba" objectId="39318f42-57c8-45d3-ac84-042e478d7159"/>
+  <containedObjects classId="9de14907-ec23-4a07-96f0-85521cb6b53b" objectId="92260c2a-6f81-44ae-979d-6c93720232a9"/>
+  <containedObjects classId="51f2d5d8-ea4d-4064-8892-82951750031e" objectId="f36aaa89-f3ac-4945-a0fd-af2cffa465fe"/>
+  <containedObjects classId="e68182ea-4237-4383-967f-90c1e3370bc7" objectId="3e33cfec-fbf2-4a1c-969b-4543b1a7c430"/>
+  <containedObjects classId="fb282519-d103-4dd3-bc12-cb271d631dfc" objectId="3ba0a95d-8f62-46f6-b36e-7014fd39d372"/>
+  <keepMappingToExtendedConfigurationObjectsByIDs>true</keepMappingToExtendedConfigurationObjectsByIDs>
+  <namePrefix>OneSniffer_</namePrefix>
+  <configurationExtensionCompatibilityMode>8.3.16</configurationExtensionCompatibilityMode>
+  <configurationExtensionPurpose>AddOn</configurationExtensionPurpose>
+  <scriptVariant>Russian</scriptVariant>
+  <version>1.0.0.1</version>
+  <briefInformation>
+    <key>ru</key>
+    <value>Логирование трафика HTTP</value>
+  </briefInformation>
+  <detailedInformation>
+    <key>ru</key>
+    <value>Протоколирование и обработка исходящих и входящих запросов HTTP</value>
+  </detailedInformation>
+  <languages uuid="4cc10aee-f2de-4b15-b00b-14a8662c1d5c">
+    <name>Русский</name>
+    <objectBelonging>Adopted</objectBelonging>
+    <extension xsi:type="mdclassExtension:LanguageExtension">
+      <languageCode>Checked</languageCode>
+    </extension>
+    <languageCode>ru</languageCode>
+  </languages>
+  <subsystems>Subsystem.OneSniffer</subsystems>
+  <commonPictures>CommonPicture.OneSniffer_Стрелки</commonPictures>
+  <commonModules>CommonModule._HTTPСоединение</commonModules>
+  <commonModules>CommonModule.ЛогированиеТрафика</commonModules>
+  <commonModules>CommonModule.ЛогированиеТрафикаПереопределяемый</commonModules>
+  <commonModules>CommonModule.ЛогированиеТрафикаПовтИсп</commonModules>
+  <commonCommands>CommonCommand.OneSniffer_ЛогиТрафика</commonCommands>
+  <enums>Enum.МетодHTTP</enums>
+  <informationRegisters>InformationRegister.ЛогиТрафика</informationRegisters>
+</mdclass:Configuration>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Subsystem xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a1a9aa66-68b7-491d-8102-d8071650a0df">
+  <name>OneSniffer</name>
+  <synonym>
+    <key>ru</key>
+    <value>OneSniffer</value>
+  </synonym>
+  <includeHelpInContents>true</includeHelpInContents>
+  <content>CommonModule._HTTPСоединение</content>
+  <content>InformationRegister.ЛогиТрафика</content>
+  <content>CommonModule.ЛогированиеТрафикаПереопределяемый</content>
+  <content>CommonModule.ЛогированиеТрафика</content>
+  <content>Enum.МетодHTTP</content>
+  <content>CommonModule.ЛогированиеТрафикаПовтИсп</content>
+  <content>CommonPicture.OneSniffer_Стрелки</content>
+  <content>CommonCommand.OneSniffer_ЛогиТрафика</content>
+</mdclass:Subsystem>
