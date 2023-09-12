@@ -43,12 +43,14 @@
     <languageCode>ru</languageCode>
   </languages>
   <subsystems>Subsystem.OneSniffer</subsystems>
+  <commonPictures>CommonPicture.OneSniffer_Настройки</commonPictures>
   <commonPictures>CommonPicture.OneSniffer_Стрелки</commonPictures>
   <commonModules>CommonModule._HTTPСоединение</commonModules>
   <commonModules>CommonModule.ЛогированиеТрафика</commonModules>
   <commonModules>CommonModule.ЛогированиеТрафикаПереопределяемый</commonModules>
   <commonModules>CommonModule.ЛогированиеТрафикаПовтИсп</commonModules>
   <commonCommands>CommonCommand.OneSniffer_ЛогиТрафика</commonCommands>
+  <constants>Constant.OneSniffer_ДатаЧтенияЖР</constants>
   <enums>Enum.МетодHTTP</enums>
   <informationRegisters>InformationRegister.ЛогиТрафика</informationRegisters>
 </mdclass:Configuration>

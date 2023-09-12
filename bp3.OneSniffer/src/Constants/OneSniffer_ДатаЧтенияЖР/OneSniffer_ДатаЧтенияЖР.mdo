@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Constant xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="ce0da14a-1642-4468-a047-9eb6d3d1eef4">
+  <producedTypes>
+    <managerType typeId="a65e3cdd-a6f9-4e61-ad0b-ffb2dee25938" valueTypeId="ad3922bc-c500-4834-9bd0-42d75a11a5bc"/>
+    <valueManagerType typeId="41ce444d-873b-4fde-9085-f724cd751791" valueTypeId="3d1a2cfe-db39-43a4-b525-2f35780c462e"/>
+    <valueKeyType typeId="920b1837-bd17-41c2-af05-27d84c7e43e4" valueTypeId="0b92d2db-27de-4eff-bd1f-99dd345ed0dd"/>
+  </producedTypes>
+  <name>OneSniffer_ДатаЧтенияЖР</name>
+  <synonym>
+    <key>ru</key>
+    <value>Дата чтения журнала регистрации</value>
+  </synonym>
+  <type>
+    <types>Date</types>
+    <dateQualifiers/>
+  </type>
+  <useStandardCommands>true</useStandardCommands>
+  <minValue xsi:type="core:UndefinedValue"/>
+  <maxValue xsi:type="core:UndefinedValue"/>
+  <dataLockControlMode>Managed</dataLockControlMode>
+</mdclass:Constant>

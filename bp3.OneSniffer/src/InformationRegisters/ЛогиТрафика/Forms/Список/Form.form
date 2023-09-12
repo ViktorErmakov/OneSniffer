@@ -4829,7 +4829,7 @@
     <name>НастройкиЛогирования</name>
     <title>
       <key>ru</key>
-      <value>Настройки логирования</value>
+      <value>Настройки</value>
     </title>
     <id>2</id>
     <toolTip>
@@ -4840,7 +4840,7 @@
       <common>true</common>
     </use>
     <picture xsi:type="core:PictureRef">
-      <picture>StdPicture.ReportSettings</picture>
+      <picture>CommonPicture.OneSniffer_Настройки</picture>
     </picture>
     <action xsi:type="form:FormCommandHandlerContainer">
       <handler>
