@@ -83,7 +83,7 @@
         <titleLocation>Right</titleLocation>
         <toolTip>
           <key>ru</key>
-          <value>Включает запись логов в журнал регистрации с подробным описанием запроса и ответа.</value>
+          <value>Включает запись логов состоявшихся вызовов в журнал регистрации с подробным описанием запроса и ответа. Исключительные ситуации будут автоматически записаны в журнал регистрации.</value>
         </toolTip>
         <toolTipRepresentation>ShowBottom</toolTipRepresentation>
         <extendedTooltip>
