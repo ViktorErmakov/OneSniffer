@@ -5166,7 +5166,7 @@
       <common>true</common>
     </use>
     <picture xsi:type="core:PictureRef">
-      <picture>StdPicture.ListViewModeList</picture>
+      <picture>CommonPicture.OneSniffer_ПросмотретьЛог</picture>
     </picture>
     <action xsi:type="form:FormCommandHandlerContainer">
       <handler>
@@ -5233,7 +5233,7 @@
       <common>true</common>
     </use>
     <picture xsi:type="core:PictureRef">
-      <picture>StdPicture.BusinessProcessStart</picture>
+      <picture>CommonPicture.OneSniffer_ПовторитьЗапрос</picture>
     </picture>
     <action xsi:type="form:FormCommandHandlerContainer">
       <handler>

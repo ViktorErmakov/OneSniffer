@@ -44,6 +44,8 @@
   </languages>
   <subsystems>Subsystem.OneSniffer</subsystems>
   <commonPictures>CommonPicture.OneSniffer_Настройки</commonPictures>
+  <commonPictures>CommonPicture.OneSniffer_ПовторитьЗапрос</commonPictures>
+  <commonPictures>CommonPicture.OneSniffer_ПросмотретьЛог</commonPictures>
   <commonPictures>CommonPicture.OneSniffer_Стрелки</commonPictures>
   <commonModules>CommonModule._HTTPСоединение</commonModules>
   <commonModules>CommonModule.ЛогированиеТрафика</commonModules>
