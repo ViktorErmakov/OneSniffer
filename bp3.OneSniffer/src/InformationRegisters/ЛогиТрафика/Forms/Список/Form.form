@@ -4823,6 +4823,21 @@
       <common>true</common>
     </edit>
   </attributes>
+  <attributes>
+    <name>ДлительнаяОперацияИсключенияЖР</name>
+    <title>
+      <key>ru</key>
+      <value>Длительная операция исключения ЖР</value>
+    </title>
+    <id>23</id>
+    <valueType/>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
   <formCommands>
     <name>СохранитьЛогиВФайл</name>
     <title>

@@ -1126,6 +1126,7 @@
     <edit>
       <common>true</common>
     </edit>
+    <savedData>true</savedData>
   </attributes>
   <attributes>
     <name>ВключенаТрассировка</name>
@@ -1192,6 +1193,7 @@
       <types>Number</types>
       <numberQualifiers>
         <precision>10</precision>
+        <nonNegative>true</nonNegative>
       </numberQualifiers>
     </valueType>
     <view>
@@ -1200,6 +1202,7 @@
     <edit>
       <common>true</common>
     </edit>
+    <savedData>true</savedData>
   </attributes>
   <attributes>
     <name>ИмяПеременнойСредыДляСохраненияЛоговHTTP</name>
@@ -1236,6 +1239,7 @@
     <edit>
       <common>true</common>
     </edit>
+    <savedData>true</savedData>
   </attributes>
   <attributes>
     <name>ПолучатьИсключенияФЗ</name>
@@ -1253,6 +1257,7 @@
     <edit>
       <common>true</common>
     </edit>
+    <savedData>true</savedData>
   </attributes>
   <attributes>
     <name>ДатаЧтенияЖР</name>
@@ -1273,6 +1278,7 @@
     <edit>
       <common>true</common>
     </edit>
+    <savedData>true</savedData>
   </attributes>
   <attributes>
     <name>ЗаписыватьВЖР</name>
@@ -1290,6 +1296,7 @@
     <edit>
       <common>true</common>
     </edit>
+    <savedData>true</savedData>
   </attributes>
   <attributes>
     <name>ЗаписыватьВРС</name>
@@ -1307,6 +1314,7 @@
     <edit>
       <common>true</common>
     </edit>
+    <savedData>true</savedData>
   </attributes>
   <attributes>
     <name>ЗаписыватьВЖРТело</name>
@@ -1324,6 +1332,7 @@
     <edit>
       <common>true</common>
     </edit>
+    <savedData>true</savedData>
   </attributes>
   <formCommands>
     <name>Готово</name>
