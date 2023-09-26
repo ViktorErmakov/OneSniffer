@@ -526,6 +526,12 @@
         </dataPath>
         <defaultItem>true</defaultItem>
         <titleLocation>None</titleLocation>
+        <excludedCommands>Create</excludedCommands>
+        <excludedCommands>Copy</excludedCommands>
+        <excludedCommands>Change</excludedCommands>
+        <excludedCommands>ChangeHistory</excludedCommands>
+        <excludedCommands>SearchHistory</excludedCommands>
+        <excludedCommands>SearchEverywhere</excludedCommands>
         <items xsi:type="form:FormField">
           <name>Дата</name>
           <id>16</id>
@@ -2802,10 +2808,15 @@
               <headerHorizontalAlign>Left</headerHorizontalAlign>
               <showInFooter>true</showInFooter>
               <extInfo xsi:type="form:InputFieldExtInfo">
+                <handlers>
+                  <event>Opening</event>
+                  <name>ЗаголовкиЗначениеОткрытие</name>
+                </handlers>
                 <width>15</width>
                 <autoMaxWidth>true</autoMaxWidth>
                 <autoMaxHeight>true</autoMaxHeight>
                 <wrap>true</wrap>
+                <openButton>true</openButton>
                 <chooseType>true</chooseType>
                 <typeDomainEnabled>true</typeDomainEnabled>
               </extInfo>
