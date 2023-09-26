@@ -16,6 +16,12 @@
   <content>CommonCommand.OneSniffer_ЛогиТрафика</content>
   <content>CommonPicture.OneSniffer_Настройки</content>
   <content>Constant.OneSniffer_ДатаЧтенияЖР</content>
-  <content>CommonPicture.OneSniffer_ПовторитьЗапрос</content>
+  <content>CommonPicture.OneSniffer_ПослатьЗапрос</content>
   <content>CommonPicture.OneSniffer_ПросмотретьЛог</content>
+  <content>CommonPicture.OneSniffer_ПолучитьОтвет</content>
+  <content>CommonPicture.OneSniffer_РедактироватьЗапрос</content>
+  <content>CommonPicture.OneSniffer_НастройкиПисьма</content>
+  <content>CommonPicture.OneSniffer_СохранитьЗапрос</content>
+  <content>CommonPicture.OneSniffer_СоздатьЗапрос</content>
+  <content>CommonPicture.OneSniffer_УдалитьЗапрос</content>
 </mdclass:Subsystem>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonPicture xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="d90d596e-1d08-44b2-b9dc-0b32c1fa6dac">
+  <name>OneSniffer_УдалитьЗапрос</name>
+  <synonym>
+    <key>ru</key>
+    <value>Удалить запрос</value>
+  </synonym>
+</mdclass:CommonPicture>

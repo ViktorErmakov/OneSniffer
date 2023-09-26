@@ -44,9 +44,15 @@
   </languages>
   <subsystems>Subsystem.OneSniffer</subsystems>
   <commonPictures>CommonPicture.OneSniffer_Настройки</commonPictures>
-  <commonPictures>CommonPicture.OneSniffer_ПовторитьЗапрос</commonPictures>
+  <commonPictures>CommonPicture.OneSniffer_НастройкиПисьма</commonPictures>
+  <commonPictures>CommonPicture.OneSniffer_ПолучитьОтвет</commonPictures>
+  <commonPictures>CommonPicture.OneSniffer_ПослатьЗапрос</commonPictures>
   <commonPictures>CommonPicture.OneSniffer_ПросмотретьЛог</commonPictures>
+  <commonPictures>CommonPicture.OneSniffer_РедактироватьЗапрос</commonPictures>
+  <commonPictures>CommonPicture.OneSniffer_СоздатьЗапрос</commonPictures>
+  <commonPictures>CommonPicture.OneSniffer_СохранитьЗапрос</commonPictures>
   <commonPictures>CommonPicture.OneSniffer_Стрелки</commonPictures>
+  <commonPictures>CommonPicture.OneSniffer_УдалитьЗапрос</commonPictures>
   <commonModules>CommonModule._HTTPСоединение</commonModules>
   <commonModules>CommonModule.ЛогированиеТрафика</commonModules>
   <commonModules>CommonModule.ЛогированиеТрафикаПереопределяемый</commonModules>

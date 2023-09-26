@@ -302,6 +302,10 @@
       <items xsi:type="form:Button">
         <name>НастройкиЛогирования</name>
         <id>319</id>
+        <title>
+          <key>ru</key>
+          <value>Настройки логирования</value>
+        </title>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -2650,6 +2654,7 @@
             <key>ru</key>
             <value>Страница тело запроса</value>
           </toolTip>
+          <height>2</height>
           <extendedTooltip>
             <name>СтраницаТелоЗапросаРасширеннаяПодсказка</name>
             <id>70</id>
@@ -2667,6 +2672,9 @@
           </extendedTooltip>
           <type>Page</type>
           <extInfo xsi:type="form:PageGroupExtInfo">
+            <picture xsi:type="core:PictureRef">
+              <picture>CommonPicture.OneSniffer_ПослатьЗапрос</picture>
+            </picture>
             <group>Vertical</group>
             <showTitle>true</showTitle>
           </extInfo>
@@ -3527,6 +3535,9 @@
           </extendedTooltip>
           <type>Page</type>
           <extInfo xsi:type="form:PageGroupExtInfo">
+            <picture xsi:type="core:PictureRef">
+              <picture>CommonPicture.OneSniffer_ПолучитьОтвет</picture>
+            </picture>
             <group>Vertical</group>
             <showTitle>true</showTitle>
           </extInfo>
@@ -4853,7 +4864,7 @@
       <common>true</common>
     </use>
     <picture xsi:type="core:PictureRef">
-      <picture>StdPicture.SaveFile</picture>
+      <picture>CommonPicture.OneSniffer_СохранитьЗапрос</picture>
     </picture>
     <action xsi:type="form:FormCommandHandlerContainer">
       <handler>
@@ -4878,14 +4889,14 @@
       <common>true</common>
     </use>
     <picture xsi:type="core:PictureRef">
-      <picture>CommonPicture.OneSniffer_Настройки</picture>
+      <picture>CommonPicture.OneSniffer_НастройкиПисьма</picture>
     </picture>
     <action xsi:type="form:FormCommandHandlerContainer">
       <handler>
         <name>ОткрытьФормуНастроек</name>
       </handler>
     </action>
-    <representation>TextPicture</representation>
+    <representation>Picture</representation>
     <currentRowUse>Auto</currentRowUse>
   </formCommands>
   <formCommands>
@@ -4953,7 +4964,7 @@
       <common>true</common>
     </use>
     <picture xsi:type="core:PictureRef">
-      <picture>StdPicture.Change</picture>
+      <picture>CommonPicture.OneSniffer_РедактироватьЗапрос</picture>
     </picture>
     <action xsi:type="form:FormCommandHandlerContainer">
       <handler>
@@ -4978,7 +4989,7 @@
       <common>true</common>
     </use>
     <picture xsi:type="core:PictureRef">
-      <picture>StdPicture.GenerateReport</picture>
+      <picture>CommonPicture.OneSniffer_ПослатьЗапрос</picture>
     </picture>
     <action xsi:type="form:FormCommandHandlerContainer">
       <handler>
@@ -5003,7 +5014,7 @@
       <common>true</common>
     </use>
     <picture xsi:type="core:PictureRef">
-      <picture>StdPicture.Task</picture>
+      <picture>CommonPicture.OneSniffer_УдалитьЗапрос</picture>
     </picture>
     <action xsi:type="form:FormCommandHandlerContainer">
       <handler>
@@ -5028,7 +5039,7 @@
       <common>true</common>
     </use>
     <picture xsi:type="core:PictureRef">
-      <picture>StdPicture.Write</picture>
+      <picture>CommonPicture.OneSniffer_СохранитьЗапрос</picture>
     </picture>
     <action xsi:type="form:FormCommandHandlerContainer">
       <handler>
@@ -5052,7 +5063,7 @@
       <common>true</common>
     </use>
     <picture xsi:type="core:PictureRef">
-      <picture>StdPicture.OpenFile</picture>
+      <picture>CommonPicture.OneSniffer_СоздатьЗапрос</picture>
     </picture>
     <action xsi:type="form:FormCommandHandlerContainer">
       <handler>
@@ -5248,7 +5259,7 @@
       <common>true</common>
     </use>
     <picture xsi:type="core:PictureRef">
-      <picture>CommonPicture.OneSniffer_ПовторитьЗапрос</picture>
+      <picture>CommonPicture.OneSniffer_ПослатьЗапрос</picture>
     </picture>
     <action xsi:type="form:FormCommandHandlerContainer">
       <handler>
@@ -5273,7 +5284,7 @@
       <common>true</common>
     </use>
     <picture xsi:type="core:PictureRef">
-      <picture>StdPicture.OpenFile</picture>
+      <picture>CommonPicture.OneSniffer_СоздатьЗапрос</picture>
     </picture>
     <action xsi:type="form:FormCommandHandlerContainer">
       <handler>
