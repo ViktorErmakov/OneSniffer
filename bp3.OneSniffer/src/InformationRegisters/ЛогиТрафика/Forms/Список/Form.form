@@ -130,7 +130,9 @@
         <type>UsualButton</type>
         <commandName>Form.Command.ПовторитьЗапрос</commandName>
         <representation>Auto</representation>
+        <width>3</width>
         <autoMaxWidth>true</autoMaxWidth>
+        <height>1</height>
         <autoMaxHeight>true</autoMaxHeight>
         <placementArea>UserCmds</placementArea>
         <representationInContextMenu>Auto</representationInContextMenu>
@@ -161,7 +163,9 @@
         <type>UsualButton</type>
         <commandName>Form.Command.ПросмотрЛогов</commandName>
         <representation>Auto</representation>
+        <width>3</width>
         <autoMaxWidth>true</autoMaxWidth>
+        <height>1</height>
         <autoMaxHeight>true</autoMaxHeight>
         <placementArea>UserCmds</placementArea>
         <representationInContextMenu>Auto</representationInContextMenu>
@@ -192,7 +196,9 @@
         <type>UsualButton</type>
         <commandName>Form.Command.ПроизвольныйЗапрос</commandName>
         <representation>Auto</representation>
+        <width>3</width>
         <autoMaxWidth>true</autoMaxWidth>
+        <height>1</height>
         <autoMaxHeight>true</autoMaxHeight>
         <placementArea>UserCmds</placementArea>
         <representationInContextMenu>Auto</representationInContextMenu>
@@ -223,7 +229,9 @@
         <type>UsualButton</type>
         <commandName>Form.Command.СохранитьЛогиВФайл</commandName>
         <representation>Auto</representation>
+        <width>3</width>
         <autoMaxWidth>true</autoMaxWidth>
+        <height>1</height>
         <autoMaxHeight>true</autoMaxHeight>
         <placementArea>UserCmds</placementArea>
         <representationInContextMenu>Auto</representationInContextMenu>
@@ -254,7 +262,9 @@
         <type>UsualButton</type>
         <commandName>Form.Command.ЗагрузитьЛогиИзФайла</commandName>
         <representation>Auto</representation>
+        <width>3</width>
         <autoMaxWidth>true</autoMaxWidth>
+        <height>1</height>
         <autoMaxHeight>true</autoMaxHeight>
         <placementArea>UserCmds</placementArea>
         <representationInContextMenu>Auto</representationInContextMenu>
@@ -329,7 +339,9 @@
         <type>UsualButton</type>
         <commandName>Form.Command.НастройкиЛогирования</commandName>
         <representation>Auto</representation>
+        <width>3</width>
         <autoMaxWidth>true</autoMaxWidth>
+        <height>1</height>
         <autoMaxHeight>true</autoMaxHeight>
         <placementArea>UserCmds</placementArea>
         <locationInCommandBar>InCommandBar</locationInCommandBar>
@@ -438,6 +450,37 @@
         <autoMaxWidth>true</autoMaxWidth>
         <autoMaxHeight>true</autoMaxHeight>
         <placementArea>UserCmds</placementArea>
+        <locationInCommandBar>InAdditionalSubmenu</locationInCommandBar>
+      </items>
+      <items xsi:type="form:Button">
+        <name>СохранитьЛогиВФайл</name>
+        <id>341</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <extendedTooltip>
+          <name>СохранитьЛогиВФайлРасширеннаяПодсказка</name>
+          <id>342</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <commandName>Form.Command.СохранитьЛогиВФайл</commandName>
+        <representation>Auto</representation>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <placementArea>UserCmds</placementArea>
+        <representationInContextMenu>Auto</representationInContextMenu>
         <locationInCommandBar>InAdditionalSubmenu</locationInCommandBar>
       </items>
       <visible>true</visible>
@@ -4930,7 +4973,7 @@
       <common>true</common>
     </use>
     <picture xsi:type="core:PictureRef">
-      <picture>CommonPicture.OneSniffer_НастройкиПисьма</picture>
+      <picture>CommonPicture.OneSniffer_Настройки</picture>
     </picture>
     <action xsi:type="form:FormCommandHandlerContainer">
       <handler>

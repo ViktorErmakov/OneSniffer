@@ -43,8 +43,8 @@
     <languageCode>ru</languageCode>
   </languages>
   <subsystems>Subsystem.OneSniffer</subsystems>
+  <commonPictures>CommonPicture.OneSniffer_ДеревоДанных</commonPictures>
   <commonPictures>CommonPicture.OneSniffer_Настройки</commonPictures>
-  <commonPictures>CommonPicture.OneSniffer_НастройкиПисьма</commonPictures>
   <commonPictures>CommonPicture.OneSniffer_ПолучитьОтвет</commonPictures>
   <commonPictures>CommonPicture.OneSniffer_ПослатьЗапрос</commonPictures>
   <commonPictures>CommonPicture.OneSniffer_ПросмотретьЛог</commonPictures>
