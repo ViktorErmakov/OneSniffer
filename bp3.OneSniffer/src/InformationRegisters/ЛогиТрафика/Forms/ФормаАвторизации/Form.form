@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form:Form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:form="http://g5.1c.ru/v8/dt/form">
+  <title>
+    <key>ru</key>
+    <value>Authorization</value>
+  </title>
   <items xsi:type="form:FormField">
     <name>ДешифрованныйТекст</name>
     <id>1</id>
@@ -12,6 +16,10 @@
       <segments>ДешифрованныйТекст</segments>
     </dataPath>
     <titleLocation>Top</titleLocation>
+    <handlers>
+      <event>OnChange</event>
+      <name>ДешифрованныйТекстПриИзменении</name>
+    </handlers>
     <extendedTooltip>
       <name>ДешифрованныйТекстРасширеннаяПодсказка</name>
       <id>3</id>
@@ -43,6 +51,10 @@
     <headerHorizontalAlign>Left</headerHorizontalAlign>
     <showInFooter>true</showInFooter>
     <extInfo xsi:type="form:InputFieldExtInfo">
+      <handlers>
+        <event>EditTextChange</event>
+        <name>ДешифрованныйТекстИзменениеТекстаРедактирования</name>
+      </handlers>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>
       <wrap>true</wrap>
@@ -88,33 +100,33 @@
       </userVisible>
       <autoFill>true</autoFill>
     </contextMenu>
-    <type>InputField</type>
+    <type>LabelField</type>
     <editMode>Enter</editMode>
     <showInHeader>true</showInHeader>
     <headerHorizontalAlign>Left</headerHorizontalAlign>
     <showInFooter>true</showInFooter>
-    <extInfo xsi:type="form:InputFieldExtInfo">
+    <extInfo xsi:type="form:LabelFieldExtInfo">
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>
-      <wrap>true</wrap>
-      <chooseType>true</chooseType>
-      <typeDomainEnabled>true</typeDomainEnabled>
-      <textEdit>true</textEdit>
     </extInfo>
   </items>
   <autoCommandBar>
     <name>ФормаКоманднаяПанель</name>
     <id>-1</id>
     <items xsi:type="form:Button">
-      <name>ФормаОК</name>
+      <name>Записать</name>
       <id>7</id>
+      <title>
+        <key>ru</key>
+        <value>Записать</value>
+      </title>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
         <common>true</common>
       </userVisible>
       <extendedTooltip>
-        <name>ФормаОКРасширеннаяПодсказка</name>
+        <name>ЗаписатьРасширеннаяПодсказка</name>
         <id>8</id>
         <visible>true</visible>
         <enabled>true</enabled>
@@ -128,24 +140,25 @@
           <horizontalAlign>Left</horizontalAlign>
         </extInfo>
       </extendedTooltip>
-      <commandName>Form.StandardCommand.OK</commandName>
+      <commandName>Form.Command.Записать</commandName>
       <representation>Auto</representation>
+      <defaultButton>true</defaultButton>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>
       <placementArea>UserCmds</placementArea>
       <representationInContextMenu>Auto</representationInContextMenu>
     </items>
     <items xsi:type="form:Button">
-      <name>ФормаОтмена</name>
-      <id>9</id>
+      <name>ФормаЗакрыть</name>
+      <id>11</id>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
         <common>true</common>
       </userVisible>
       <extendedTooltip>
-        <name>ФормаОтменаРасширеннаяПодсказка</name>
-        <id>10</id>
+        <name>ФормаЗакрытьРасширеннаяПодсказка</name>
+        <id>12</id>
         <visible>true</visible>
         <enabled>true</enabled>
         <userVisible>
@@ -158,7 +171,7 @@
           <horizontalAlign>Left</horizontalAlign>
         </extInfo>
       </extendedTooltip>
-      <commandName>Form.StandardCommand.Cancel</commandName>
+      <commandName>Form.StandardCommand.Close</commandName>
       <representation>Auto</representation>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>
@@ -177,7 +190,6 @@
     <event>OnCreateAtServer</event>
     <name>ПриСозданииНаСервере</name>
   </handlers>
-  <excludedCommands>CustomizeForm</excludedCommands>
   <excludedCommands>OpenFromStandaloneServer</excludedCommands>
   <excludedCommands>Ignore</excludedCommands>
   <excludedCommands>Retry</excludedCommands>
@@ -185,11 +197,9 @@
   <excludedCommands>Abort</excludedCommands>
   <excludedCommands>No</excludedCommands>
   <excludedCommands>OpenFromMainServer</excludedCommands>
-  <excludedCommands>Close</excludedCommands>
   <excludedCommands>RestoreValues</excludedCommands>
   <excludedCommands>SaveValues</excludedCommands>
-  <excludedCommands>Help</excludedCommands>
-  <autoTitle>true</autoTitle>
+  <excludedCommands>Cancel</excludedCommands>
   <autoUrl>true</autoUrl>
   <group>Vertical</group>
   <autoFillCheck>true</autoFillCheck>
@@ -214,6 +224,7 @@
     <edit>
       <common>true</common>
     </edit>
+    <savedData>true</savedData>
   </attributes>
   <attributes>
     <name>ДешифрованныйТекст</name>
@@ -233,6 +244,23 @@
       <common>true</common>
     </edit>
   </attributes>
+  <formCommands>
+    <name>Записать</name>
+    <title>
+      <key>ru</key>
+      <value>Записать</value>
+    </title>
+    <id>1</id>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>Записать</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
   <parameters>
     <name>ШифрованныйТекст</name>
     <valueType>
