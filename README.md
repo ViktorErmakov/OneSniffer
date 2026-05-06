@@ -1,5 +1,14 @@
 # OneSniffer: расширение для анализа, логирования входящего и исходящего трафика HTTP из 1С:Предприятие 8
 
+## Star History
+
+<a href="https://www.star-history.com/?repos=ViktorErmakov%2FOneSniffer&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=ViktorErmakov/OneSniffer&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=ViktorErmakov/OneSniffer&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=ViktorErmakov/OneSniffer&type=date&legend=top-left" />
+ </picture>
+</a>
 
 В компьютерном мире анализатор трафика, или сниффер — программа или устройство для перехвата и анализа сетевого трафика (своего и/или чужого). 
 OneSniffer это реализация подобной программы для 1С:Предприятие 8.
