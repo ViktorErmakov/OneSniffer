@@ -1,0 +1,64 @@
+---
+description: "Unified done gate for non-trivial 1C changes — EDT validation, impact, metadata"
+alwaysApply: false
+---
+# Verification Checklist — the closing gate
+
+**When to load:** before declaring any non-trivial change "done".
+
+**Companion files:** `tooling-playbooks.mdc`, `subagent-pipeline.mdc`, `systematic-debugging.mdc`.
+
+## Hard gates — full-cycle changes
+
+### Gate 1 — EDT validation
+
+- Run `revalidate_objects` on every touched metadata object, or `get_project_errors` for the project.
+- Pass criterion: no errors on touched objects. Warnings — triage in Gate 2.
+- Retry budget: **1 call by default, up to 3 only if the previous run returned a substantive defect** you then attempted to fix.
+
+### Gate 2 — Problem triage
+
+- Run `get_problem_summary` after Gate 1 when the change is non-trivial.
+- Pass criterion: no unaddressed errors in scope of the change.
+- Pre-existing issues outside scope — note in delivery summary, do not fix unless asked.
+
+### Gate 3 — Impact analysis (when public surface changed)
+
+Skip only for fully internal changes (private non-export procedures, comment-only edits).
+
+Otherwise:
+
+- `find_references` on changed export routines and renamed metadata.
+- `get_method_call_hierarchy` for call-chain impact.
+
+Pass criterion: every dependent listed was reviewed or explicitly noted as follow-up risk.
+
+**When EDT MCP is offline:** state in delivery summary: *"Impact analysis not run — EDT MCP unavailable."* Do not silently skip.
+
+### Gate 4 — Metadata validation (when metadata was edited)
+
+- `revalidate_objects` on modified objects.
+- Hand-edited XML: cross-check `metadata-xml-workarounds.mdc`.
+- Prefer `1c-metadata-manage` skill over hand edits for non-trivial metadata.
+
+### Gate 5 — Queries (when a new/changed query string was introduced)
+
+- `validate_query` on the query text.
+
+## Soft gates
+
+- **Reproduction (bug fixes):** failing scenario reproduced or explicitly documented as unverified.
+- **Plan adherence:** delivery matches the stated plan.
+- **User-requested review:** run when explicitly asked.
+
+## Quick-fix path
+
+Single procedure, <~20 lines, no public API / metadata wiring impact:
+
+- Gate 1 only (`revalidate_objects` or `get_project_errors` on the touched module/object).
+
+## Delivery summary must include
+
+- Files changed and why.
+- EDT validation result (or note if MCP was offline).
+- Residual risks and unverified assumptions.

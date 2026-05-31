@@ -1,0 +1,42 @@
+---
+description: "EDT MCP-first search — use EDT index tools before Grep/Glob on 1C project source"
+alwaysApply: false
+---
+# EDT-first search discipline
+
+For 1C **project-source search** under `bp3.OneSniffer/` — EDT MCP tools come **first**. `Grep` / `Glob` are the **last resort**.
+
+Catalog: `.cursor/skills/edt-mcp-tools/SKILL.md`.
+
+## Hard rule
+
+1. Before `Grep` / `Glob` on BSL or EDT metadata:
+   - `search_in_code` with a tuned query.
+   - `find_references` when the symbol name is known.
+   - `get_metadata_details` / `get_metadata_objects` for metadata questions.
+   - `get_method_call_hierarchy` for call-graph questions.
+2. Only then `Grep` / `Glob` — with a one-line note explaining why EDT search was insufficient.
+3. No duplicate MCP calls against unchanged state.
+
+## Quick first-pick table
+
+| Need | First EDT call | If empty — next |
+|---|---|---|
+| Find code by text | `search_in_code` | `find_references` → then `Grep` |
+| Read a module | `read_module_source` | `Read` tool on file path |
+| Routine by name | `search_in_code` | `find_references` |
+| Metadata structure | `get_metadata_details` | `get_metadata_objects` |
+| Usages / impact | `find_references` | `get_method_call_hierarchy` |
+| Form layout | `get_form_layout_snapshot` | `Read` on `.form` file |
+| Platform API | `get_platform_documentation` | — |
+
+## When Grep/Glob need no EDT attempt first
+
+- Rule files, `PROJECT.md`, `AGENTS.md`, logs, non-1C configs.
+- A file already read in-session and scanned for a literal.
+
+## Response gate
+
+Before delivering a result that used `Grep` on project source, include e.g.:
+
+> *Tried `search_in_code(query="...")` (empty); fell back to `Grep` for literal `<...>`.*

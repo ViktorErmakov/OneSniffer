@@ -2119,7 +2119,7 @@
               <id>337</id>
               <title>
                 <key>ru</key>
-                <value>Редактировать Autorization</value>
+                <value>Редактировать Authorization</value>
               </title>
               <visible>true</visible>
               <enabled>true</enabled>
@@ -2245,21 +2245,137 @@
                 <representation>Auto</representation>
               </extInfo>
             </items>
-            <items xsi:type="form:Button">
-              <name>ТестовыйЗапрос</name>
-              <id>343</id>
-              <title>
-                <key>ru</key>
-                <value>Запрос картинки в api.unsplash.com</value>
-              </title>
+            <items xsi:type="form:FormGroup">
+              <name>ГруппаТестовыеЗапросы</name>
+              <id>347</id>
+              <items xsi:type="form:Button">
+                <name>ТестовыйЗапрос</name>
+                <id>343</id>
+                <title>
+                  <key>ru</key>
+                  <value>Unsplash — картинка (GET)</value>
+                </title>
+                <visible>true</visible>
+                <enabled>true</enabled>
+                <userVisible>
+                  <common>true</common>
+                </userVisible>
+                <extendedTooltip>
+                  <name>ТестовыйЗапросРасширеннаяПодсказка</name>
+                  <id>344</id>
+                  <visible>true</visible>
+                  <enabled>true</enabled>
+                  <userVisible>
+                    <common>true</common>
+                  </userVisible>
+                  <type>Label</type>
+                  <autoMaxWidth>true</autoMaxWidth>
+                  <autoMaxHeight>true</autoMaxHeight>
+                  <extInfo xsi:type="form:LabelDecorationExtInfo">
+                    <horizontalAlign>Left</horizontalAlign>
+                  </extInfo>
+                </extendedTooltip>
+                <commandName>Form.Command.ТестовыйЗапрос</commandName>
+                <representation>Auto</representation>
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <placementArea>UserCmds</placementArea>
+                <representationInContextMenu>Auto</representationInContextMenu>
+              </items>
+              <items xsi:type="form:Button">
+                <name>ТестовыйЗапросОшибка</name>
+                <id>345</id>
+                <title>
+                  <key>ru</key>
+                  <value>Ошибка HTTP — закрытый порт</value>
+                </title>
+                <visible>true</visible>
+                <enabled>true</enabled>
+                <userVisible>
+                  <common>true</common>
+                </userVisible>
+                <toolTip>
+                  <key>ru</key>
+                  <value>GET на 127.0.0.1:59999 — ожидаемое исключение для проверки ЖР и импорта в список</value>
+                </toolTip>
+                <toolTipRepresentation>ShowBottom</toolTipRepresentation>
+                <extendedTooltip>
+                  <name>ТестовыйЗапросОшибкаРасширеннаяПодсказка</name>
+                  <id>346</id>
+                  <visible>true</visible>
+                  <enabled>true</enabled>
+                  <userVisible>
+                    <common>true</common>
+                  </userVisible>
+                  <type>Label</type>
+                  <autoMaxWidth>true</autoMaxWidth>
+                  <autoMaxHeight>true</autoMaxHeight>
+                  <extInfo xsi:type="form:LabelDecorationExtInfo">
+                    <horizontalAlign>Left</horizontalAlign>
+                  </extInfo>
+                </extendedTooltip>
+                <commandName>Form.Command.ТестовыйЗапросОшибка</commandName>
+                <representation>Auto</representation>
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <placementArea>UserCmds</placementArea>
+                <representationInContextMenu>Auto</representationInContextMenu>
+              </items>
+              <items xsi:type="form:Button">
+                <name>ТестовыйЗапросАвторизация</name>
+                <id>348</id>
+                <title>
+                  <key>ru</key>
+                  <value>Authorization — логин и пароль</value>
+                </title>
+                <visible>true</visible>
+                <enabled>true</enabled>
+                <userVisible>
+                  <common>true</common>
+                </userVisible>
+                <toolTip>
+                  <key>ru</key>
+                  <value>Логин onesniffer, пароль SecretP@ssw0rd в Bearer. Проверка формы Authorization и маскирования в логе (#9)</value>
+                </toolTip>
+                <toolTipRepresentation>ShowBottom</toolTipRepresentation>
+                <extendedTooltip>
+                  <name>ТестовыйЗапросАвторизацияРасширеннаяПодсказка</name>
+                  <id>349</id>
+                  <visible>true</visible>
+                  <enabled>true</enabled>
+                  <userVisible>
+                    <common>true</common>
+                  </userVisible>
+                  <type>Label</type>
+                  <autoMaxWidth>true</autoMaxWidth>
+                  <autoMaxHeight>true</autoMaxHeight>
+                  <extInfo xsi:type="form:LabelDecorationExtInfo">
+                    <horizontalAlign>Left</horizontalAlign>
+                  </extInfo>
+                </extendedTooltip>
+                <commandName>Form.Command.ТестовыйЗапросАвторизация</commandName>
+                <representation>Auto</representation>
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <placementArea>UserCmds</placementArea>
+                <representationInContextMenu>Auto</representationInContextMenu>
+              </items>
               <visible>true</visible>
               <enabled>true</enabled>
               <userVisible>
                 <common>true</common>
               </userVisible>
+              <title>
+                <key>ru</key>
+                <value>Тестовые запросы</value>
+              </title>
+              <toolTip>
+                <key>ru</key>
+                <value>Демо-запросы OneSniffer для проверки без правок кода хоста</value>
+              </toolTip>
               <extendedTooltip>
-                <name>ТестовыйЗапросРасширеннаяПодсказка</name>
-                <id>344</id>
+                <name>ГруппаТестовыеЗапросыРасширеннаяПодсказка</name>
+                <id>350</id>
                 <visible>true</visible>
                 <enabled>true</enabled>
                 <userVisible>
@@ -2272,12 +2388,10 @@
                   <horizontalAlign>Left</horizontalAlign>
                 </extInfo>
               </extendedTooltip>
-              <commandName>Form.Command.ТестовыйЗапрос</commandName>
-              <representation>Auto</representation>
-              <autoMaxWidth>true</autoMaxWidth>
-              <autoMaxHeight>true</autoMaxHeight>
-              <placementArea>UserCmds</placementArea>
-              <representationInContextMenu>Auto</representationInContextMenu>
+              <type>Popup</type>
+              <extInfo xsi:type="form:PopupGroupExtInfo">
+                <representation>Auto</representation>
+              </extInfo>
             </items>
             <visible>true</visible>
             <enabled>true</enabled>
@@ -4911,6 +5025,23 @@
       <common>true</common>
     </edit>
   </attributes>
+  <attributes>
+    <name>ИмпортированоИзЖРПриОткрытии</name>
+    <title>
+      <key>ru</key>
+      <value>Импортировано из ЖР при открытии</value>
+    </title>
+    <id>24</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
   <formCommands>
     <name>СохранитьЛогиВФайл</name>
     <title>
@@ -5444,6 +5575,48 @@
     <action xsi:type="form:FormCommandHandlerContainer">
       <handler>
         <name>ТестовыйЗапрос</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>ТестовыйЗапросОшибка</name>
+    <title>
+      <key>ru</key>
+      <value>Тест ошибки HTTP</value>
+    </title>
+    <id>30</id>
+    <toolTip>
+      <key>ru</key>
+      <value>Тест исключения для проверки ЖР и импорта в РС</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>ТестовыйЗапросОшибка</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>ТестовыйЗапросАвторизация</name>
+    <title>
+      <key>ru</key>
+      <value>Тест Authorization</value>
+    </title>
+    <id>31</id>
+    <toolTip>
+      <key>ru</key>
+      <value>Логин onesniffer, пароль SecretP@ssw0rd — форма Authorization и маскирование (#9)</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>ТестовыйЗапросАвторизация</name>
       </handler>
     </action>
     <currentRowUse>Auto</currentRowUse>

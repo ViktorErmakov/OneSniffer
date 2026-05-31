@@ -1,0 +1,89 @@
+---
+description: "Per-task EDT MCP playbooks (writing code, review, refactoring, error fixing, performance, forms, integrations, documentation)"
+alwaysApply: false
+---
+# Tool Usage by Task — Playbooks
+
+The EDT MCP catalog and fallback order live in `.cursor/skills/edt-mcp-tools/SKILL.md`. `AGENTS.md` defines obligation rules and points here.
+
+## Minimum Evidence Matrix
+
+| Task shape | Required before edit | Required after edit |
+|---|---|---|
+| **Quick-fix BSL** | Read the target module / procedure and direct helpers | `revalidate_objects` or `get_project_errors` on touched objects |
+| **Full-cycle BSL** | `search_in_code` for local patterns; `get_metadata_details` when metadata shape matters; `get_platform_documentation` when versioned API behaviour matters | `get_project_errors` → `get_problem_summary`; `find_references` when public surface changed |
+| **Metadata / forms (EDT)** | Similar objects via `get_metadata_objects`; prefer `1c-metadata-manage` skill scripts for XML | `revalidate_objects`; form layout via `get_form_layout_snapshot` when needed |
+| **Integrations / platform APIs** | Existing code via `search_in_code`; platform docs via `get_platform_documentation` | `get_project_errors`; `validate_query` for new queries |
+| **Markdown / rules / docs** | Read affected files | Structural checks: paths, links, anchors, consistency |
+
+## Writing New Code
+
+1. `search_in_code` — find similar implementations in the project.
+2. `get_metadata_details` — verify target object structure.
+3. `read_module_source` / `get_module_structure` — context of the module to edit.
+4. `get_platform_documentation` — verify built-in methods for the platform version.
+5. `get_content_assist` — discover available members in a BSL context when needed.
+6. After writing: `revalidate_objects` → `get_project_errors` → `get_problem_summary`.
+7. New query strings: `validate_query`.
+
+## Code Review
+
+1. `search_in_code` — verify pattern compliance.
+2. `find_references` / `get_method_call_hierarchy` — impact and coupling.
+3. `get_metadata_details` — correct metadata usage.
+4. `get_platform_documentation` — verify API names.
+5. `get_check_description` — EDT static-analysis rule context for flagged issues.
+6. `get_project_errors` / `get_problem_summary` — existing defects in scope.
+
+## Architecture Design
+
+1. `get_metadata_details` — structure of key objects.
+2. `find_references` — objects referencing the target.
+3. `get_method_call_hierarchy` — call coupling.
+4. `search_in_code` — existing architectural patterns.
+5. `list_subsystems` / `get_subsystem_content` — subsystem map.
+
+## Error Fixing
+
+1. `get_project_errors` / `get_problem_summary` — current defects.
+2. `search_in_code` — locate failing routine and related patterns.
+3. `read_method_source` / `get_module_structure` — context around the error.
+4. `get_method_call_hierarchy` — propagation through call chain.
+5. `get_platform_documentation` — verify API usage.
+6. `validate_query` — when the suspect path is a query.
+7. `debug_launch`, `set_breakpoint`, `evaluate_expression` — when runtime evidence is required.
+
+## Performance Optimization
+
+1. `search_in_code` — locate slow patterns.
+2. `get_method_call_hierarchy` — hot call chains.
+3. `get_metadata_details` — indexes and register structure.
+4. `start_profiling` / `get_profiling_results` — when profiling is available.
+5. `validate_query` — rewritten queries.
+
+## Refactoring
+
+1. `get_metadata_details` — object being refactored.
+2. `find_references` — every reference before rename/remove.
+3. `get_method_call_hierarchy` (`callers`) — all callers.
+4. `search_in_code` — related code patterns.
+5. Post-refactor: `search_in_code` for old names; `get_project_errors`.
+
+## Metadata XML / Forms
+
+1. `get_metadata_objects` — similar objects as examples.
+2. `get_form_layout_snapshot` — existing form structure.
+3. Prefer `1c-metadata-manage` skill for mutating operations.
+4. `revalidate_objects` after edits.
+
+## Integrations
+
+1. `search_in_code` — existing HTTP / exchange patterns in the project.
+2. `get_platform_documentation` — HTTP, JSON, file APIs.
+3. `get_project_errors` after implementation.
+
+## Documentation tasks
+
+1. Read `PROJECT.md` and relevant source via `read_module_source`.
+2. `get_metadata_details` when documenting object structure.
+3. No MCP validation required for pure Markdown unless factual claims about metadata — then confirm via `get_metadata_details`.
