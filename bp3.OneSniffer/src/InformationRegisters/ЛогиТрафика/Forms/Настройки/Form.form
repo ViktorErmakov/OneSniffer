@@ -21,7 +21,7 @@
       <titleLocation>Right</titleLocation>
       <toolTip>
         <key>ru</key>
-        <value>Сохранять запросы HTTP в системе логирования</value>
+        <value>Главный выключатель. Без него обёртка не записывает логи HTTP</value>
       </toolTip>
       <toolTipRepresentation>ShowBottom</toolTipRepresentation>
       <handlers>
@@ -86,7 +86,7 @@
           <titleLocation>Right</titleLocation>
           <toolTip>
             <key>ru</key>
-            <value>Включает запись логов состоявшихся вызовов в журнал регистрации с подробным описанием запроса и ответа. Исключительные ситуации будут автоматически записаны в журнал регистрации.</value>
+            <value>Успешные вызовы — событие OneSniffer.ВызватьHTTPМетод (Информация). Исключения пишутся в ЖР всегда</value>
           </toolTip>
           <toolTipRepresentation>ShowBottom</toolTipRepresentation>
           <handlers>
@@ -143,7 +143,7 @@
           <titleLocation>Right</titleLocation>
           <toolTip>
             <key>ru</key>
-            <value>Включает запись логов в регистр сведений &quot;ЛогиТрафика&quot; записи которого можно посмотреть на форме списка, по команде &quot;Логи трафика (OneSniffer)&quot;</value>
+            <value>Запись в регистр ЛогиТрафика для просмотра на форме списка</value>
           </toolTip>
           <toolTipRepresentation>ShowBottom</toolTipRepresentation>
           <extendedTooltip>
@@ -269,7 +269,7 @@
           <titleLocation>Right</titleLocation>
           <toolTip>
             <key>ru</key>
-            <value>Записывать в журнал регистрации тело запроса и тело ответа</value>
+            <value>Тело запроса и ответа в комментарии ЖР (отдельно от флага «писать в ЖР»)</value>
           </toolTip>
           <toolTipRepresentation>ShowBottom</toolTipRepresentation>
           <extendedTooltip>
@@ -336,7 +336,7 @@
             <titleLocation>Right</titleLocation>
             <toolTip>
               <key>ru</key>
-              <value>Записывать в регистр сведений тело запроса и тело ответа</value>
+              <value>Тело запроса и ответа в регистре (отдельно от флага «писать в РС»)</value>
             </toolTip>
             <toolTipRepresentation>ShowBottom</toolTipRepresentation>
             <type>CheckBoxField</type>
@@ -466,7 +466,7 @@
       <titleLocation>Right</titleLocation>
       <toolTip>
         <key>ru</key>
-        <value>Получать записи логов из журнала регистрации при открытии формы логов.</value>
+        <value>Импорт записей OneSniffer.ВызватьHTTPМетод из ЖР в РС при открытии списка</value>
       </toolTip>
       <toolTipRepresentation>ShowBottom</toolTipRepresentation>
       <handlers>
@@ -528,7 +528,7 @@
         <titleLocation>Right</titleLocation>
         <toolTip>
           <key>ru</key>
-          <value>Дата последнего чтения логов из журнала регистрации</value>
+          <value>С какой даты читать журнал регистрации (константа OneSniffer_ДатаЧтенияЖР)</value>
         </toolTip>
         <toolTipRepresentation>ShowBottom</toolTipRepresentation>
         <extendedTooltip>
@@ -584,7 +584,7 @@
         <titleLocation>Right</titleLocation>
         <toolTip>
           <key>ru</key>
-          <value>Получать записи логов из журнала регистрации при открытии формы логов в фоновом задании</value>
+          <value>Импорт из ЖР в фоновом задании при открытии списка</value>
         </toolTip>
         <toolTipRepresentation>ShowBottom</toolTipRepresentation>
         <extendedTooltip>
@@ -701,7 +701,7 @@
       <titleLocation>Right</titleLocation>
       <toolTip>
         <key>ru</key>
-        <value>Пока очистить логи можно только по кнопке очистить</value>
+        <value>Количество дней для ручной очистки по кнопке «Очистить»</value>
       </toolTip>
       <toolTipRepresentation>ShowBottom</toolTipRepresentation>
       <extendedTooltip>
@@ -1128,6 +1128,36 @@
         </extInfo>
       </extendedTooltip>
       <commandName>Form.StandardCommand.Close</commandName>
+      <representation>Auto</representation>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <placementArea>UserCmds</placementArea>
+      <representationInContextMenu>Auto</representationInContextMenu>
+    </items>
+    <items xsi:type="form:Button">
+      <name>ФормаСправка</name>
+      <id>90</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <extendedTooltip>
+        <name>ФормаСправкаРасширеннаяПодсказка</name>
+        <id>91</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <commandName>Form.StandardCommand.Help</commandName>
       <representation>Auto</representation>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>

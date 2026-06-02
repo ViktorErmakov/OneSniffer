@@ -132,8 +132,8 @@ Header: value
 | [16](https://github.com/ViktorErmakov/OneSniffer/issues/16) | Кнопка тестового запроса | ✅ closed | Демо без правок кода хоста |
 | [9](https://github.com/ViktorErmakov/OneSniffer/issues/9) | Безопасное хранение Authorization, просмотр | ✅ closed (май 2026) | Маскирование в РС/ЖР, «глазок» на форме авторизации, Bearer decode |
 | [11](https://github.com/ViktorErmakov/OneSniffer/issues/11) | Нет ошибок, если настройки ни разу не сохранялись | ✅ closed (май 2026) | `НормализоватьНастройкиЛогирования()` при загрузке |
-| [12](https://github.com/ViktorErmakov/OneSniffer/issues/12) | Сохранение/загрузка лога в файл | 🟡 open | Кнопки **есть** (`СохранитьЛогиВФайл`, `ЗагрузитьЛогиИзФайла`); закрыть issue или дописать авто-сохранение в env (см. ниже) |
-| [14](https://github.com/ViktorErmakov/OneSniffer/issues/14) | Документация README и настроек | 🟡 open | README минимален; на форме настроек элементы без описания |
+| [12](https://github.com/ViktorErmakov/OneSniffer/issues/12) | Сохранение/загрузка лога в файл | ✅ closed (июн 2026) | Markdown import/export в README; env-автосохранение — фаза 2 |
+| [14](https://github.com/ViktorErmakov/OneSniffer/issues/14) | Документация README и настроек | ✅ closed (июн 2026) | README + встроенная справка из README (`tools/build-docs.ps1`) |
 | [18](https://github.com/ViktorErmakov/OneSniffer/issues/18) | «Писать тело» только вместе с ЖР | ✅ closed (май 2026) | `ЗаписыватьВРСТело` / `ЗаписыватьВЖРТело` разделены |
 | [8](https://github.com/ViktorErmakov/OneSniffer/issues/8) | Monaco Editor на форме запроса | 🟡 open | Улучшение редактора, не блокер ядра |
 | [7](https://github.com/ViktorErmakov/OneSniffer/issues/7) | Демо-база | 🟡 open | Инфраструктура для тестов исходящих |
@@ -184,6 +184,8 @@ Header: value
 
 **Фаза 1 выполнена** (шаги 1.1–1.9, T1–T6, #9, #11, #18, 2.5) — см. раздел выше.
 
+**Этап 0 (июн 2026):** README, `tools/build-docs.ps1`, встроенная справка `Ext/Help/ru.html`, кнопка «Справка» на формах Список и Настройки — закрыты #14, #12 (markdown), пункт DoD по README.
+
 #### Фаза 2 — настройки «доп. возможности» (форма уже есть)
 
 | Шаг | Задача | Оценка |
@@ -222,7 +224,7 @@ Header: value
 - [x] Все вызовы через `_ВызватьHTTPМетод` стабильно пишут в РС/ЖР по настройкам без сюрпризов (#18).
 - [x] Исключения и транзакции не теряют логи (#4).
 - [x] Новый пользователь / пустые настройки — без ошибок (#11).
-- [ ] README описывает внедрение и настройки (#14).
+- [x] README описывает внедрение и настройки (#14); встроенная справка синхронизируется через `tools/build-docs.ps1`.
 - [x] Issues #18, #11, #9 закрыты в коде и приняты на ИБ.
 - [x] На форме нет «мертвых» переключателей без поведения (скрыты до фазы 2).
 - [x] TODO T1–T6 закрыты.
@@ -369,7 +371,7 @@ Header: value
 | Настройки | `CommonModules/ЛогированиеТрафика/Module.bsl` (область `НастройкиЛогирования`) |
 | UI список / повтор запроса | `InformationRegisters/ЛогиТрафика/Forms/Список/Module.bsl` |
 | Импорт/экспорт markdown | `ЛогированиеТрафика`: `ПолучитьТекстЛога`, `ЗагрузитьЛогиHTTPИзФайла`, `ПрочитатьПротоколыЗапросовИзСтроки` |
-| Пользовательская документация | `README.md` |
+| Пользовательская документация | `README.md`, `tools/build-docs.ps1`, `InformationRegisters/ЛогиТрафика/Ext/Help/ru.html` |
 
 ---
 
