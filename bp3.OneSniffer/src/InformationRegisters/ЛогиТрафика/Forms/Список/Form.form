@@ -1932,6 +1932,36 @@
                 <toolTipRepresentation>ShowBottom</toolTipRepresentation>
                 <representationInContextMenu>Auto</representationInContextMenu>
               </items>
+              <items xsi:type="form:Button">
+                <name>ТестовыйЗапросВходящийHTTP</name>
+                <id>351</id>
+                <title>
+                  <key>ru</key>
+                  <value>Демо входящий HTTP (IIS)</value>
+                </title>
+                <visible>true</visible>
+                <enabled>true</enabled>
+                <userVisible>
+                  <common>true</common>
+                </userVisible>
+                <extendedTooltip>
+                  <name>ТестовыйЗапросВходящийHTTPРасширеннаяПодсказка</name>
+                  <id>352</id>
+                  <type>Label</type>
+                  <autoMaxWidth>true</autoMaxWidth>
+                  <autoMaxHeight>true</autoMaxHeight>
+                  <extInfo xsi:type="form:LabelDecorationExtInfo">
+                    <horizontalAlign>Left</horizontalAlign>
+                  </extInfo>
+                </extendedTooltip>
+                <commandName>Form.Command.ТестовыйЗапросВходящийHTTP</commandName>
+                <representation>Auto</representation>
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <placementArea>UserCmds</placementArea>
+                <toolTipRepresentation>ShowBottom</toolTipRepresentation>
+                <representationInContextMenu>Auto</representationInContextMenu>
+              </items>
               <visible>true</visible>
               <enabled>true</enabled>
               <userVisible>
@@ -4728,6 +4758,27 @@
     <action xsi:type="form:FormCommandHandlerContainer">
       <handler>
         <name>ТестовыйЗапросАвторизация</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>ТестовыйЗапросВходящийHTTP</name>
+    <title>
+      <key>ru</key>
+      <value>Демо входящий HTTP</value>
+    </title>
+    <id>32</id>
+    <toolTip>
+      <key>ru</key>
+      <value>Подставляет GET к демо HTTP-сервису (IIS) в редактор; выполнение — кнопкой «Выполнить»</value>
+    </toolTip>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>ТестовыйЗапросВходящийHTTP</name>
       </handler>
     </action>
     <currentRowUse>Auto</currentRowUse>

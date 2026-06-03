@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:HTTPService xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="b1c2d3e4-f5a6-4789-b012-3456789abcde">
+  <name>OneSniffer_Демо</name>
+  <synonym>
+    <key>ru</key>
+    <value>OneSniffer — демо HTTP</value>
+  </synonym>
+  <rootURL>onesniffer</rootURL>
+  <reuseSessions>AutoUse</reuseSessions>
+  <sessionMaxAge>20</sessionMaxAge>
+  <urlTemplates uuid="c2d3e4f5-a6b7-4890-c123-456789abcdef">
+    <name>Ping</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ping</value>
+    </synonym>
+    <template>/ping</template>
+    <methods uuid="d3e4f5a6-b7c8-4901-d234-56789abcdef0">
+      <name>Получить</name>
+      <synonym>
+        <key>ru</key>
+        <value>Получить</value>
+      </synonym>
+      <handler>PingПолучить</handler>
+    </methods>
+  </urlTemplates>
+</mdclass:HTTPService>

@@ -7,6 +7,8 @@
   </synonym>
   <includeHelpInContents>true</includeHelpInContents>
   <content>CommonModule._HTTPСоединение</content>
+  <content>CommonModule._HTTPСервис</content>
+  <content>HTTPService.OneSniffer_Демо</content>
   <content>InformationRegister.ЛогиТрафика</content>
   <content>CommonModule.ЛогированиеТрафикаПереопределяемый</content>
   <content>CommonModule.ЛогированиеТрафика</content>
