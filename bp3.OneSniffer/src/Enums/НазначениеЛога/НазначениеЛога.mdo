@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Enum xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="32c36b27-63d2-4e1e-8863-807cf5367ca1">
+  <producedTypes>
+    <refType typeId="2aed88e1-e772-44a3-8b0c-3829fd29cf52" valueTypeId="e77c698a-2751-42f1-a35b-5c0ab3d44920"/>
+    <listType typeId="f4818495-e684-4d2c-ac31-b24e898f2355" valueTypeId="6f8af4d2-aa39-4fca-8c33-9e676fecd8d5"/>
+    <managerType typeId="a921f113-406f-4420-8a8e-be89096dd6a9" valueTypeId="a7a665e5-e84e-4589-9e27-9db54af7cf12"/>
+  </producedTypes>
+  <name>НазначениеЛога</name>
+  <synonym>
+    <key>ru</key>
+    <value>Назначение лога</value>
+  </synonym>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Order</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <standardAttributes>
+    <dataHistory>Use</dataHistory>
+    <name>Ref</name>
+    <fillValue xsi:type="core:UndefinedValue"/>
+    <fullTextSearch>Use</fullTextSearch>
+    <minValue xsi:type="core:UndefinedValue"/>
+    <maxValue xsi:type="core:UndefinedValue"/>
+  </standardAttributes>
+  <quickChoice>true</quickChoice>
+  <choiceMode>BothWays</choiceMode>
+  <enumValues uuid="1482a755-c3ac-49e2-ab11-9e2c85de594f">
+    <name>Рабочий</name>
+    <synonym>
+      <key>ru</key>
+      <value>Рабочий</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="023f10e2-b5da-4706-bde1-f51861475153">
+    <name>Регистр</name>
+    <synonym>
+      <key>ru</key>
+      <value>Регистр</value>
+    </synonym>
+  </enumValues>
+  <enumValues uuid="80f3178a-7b10-42b4-bfe1-2d43d18da5ab">
+    <name>Журнал</name>
+    <synonym>
+      <key>ru</key>
+      <value>Журнал</value>
+    </synonym>
+  </enumValues>
+</mdclass:Enum>

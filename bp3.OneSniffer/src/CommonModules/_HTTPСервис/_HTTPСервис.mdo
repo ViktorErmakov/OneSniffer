@@ -6,6 +6,7 @@
     <value>_HTTPСервис</value>
   </synonym>
   <server>true</server>
+  <returnValuesReuse>DontUse</returnValuesReuse>
   <externalConnection>true</externalConnection>
   <clientOrdinaryApplication>true</clientOrdinaryApplication>
 </mdclass:CommonModule>
