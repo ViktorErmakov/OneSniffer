@@ -18,6 +18,7 @@
   <content>CommonCommand.OneSniffer_ЛогиТрафика</content>
   <content>CommonPicture.OneSniffer_Настройки</content>
   <content>Constant.OneSniffer_ДатаЧтенияЖР</content>
+  <content>ScheduledJob.OneSniffer_ОчисткаЛоговТрафика</content>
   <content>CommonPicture.OneSniffer_ПослатьЗапрос</content>
   <content>CommonPicture.OneSniffer_ПросмотретьЛог</content>
   <content>CommonPicture.OneSniffer_ПолучитьОтвет</content>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:ScheduledJob xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="75795aa4-29c2-44c2-a589-126f2bf5ea5e">
+  <name>OneSniffer_ОчисткаЛоговТрафика</name>
+  <synonym>
+    <key>ru</key>
+    <value>Очистка логов трафика OneSniffer</value>
+  </synonym>
+  <comment>Удаление устаревших записей регистра ЛогиТрафика по настройке СрокХранения</comment>
+  <methodName>CommonModule.ЛогированиеТрафика.ОчиститьИсториюЛоговРегламентноеЗадание</methodName>
+  <predefined>true</predefined>
+  <use>false</use>
+  <restartCountOnFailure>3</restartCountOnFailure>
+  <restartIntervalOnFailure>600</restartIntervalOnFailure>
+</mdclass:ScheduledJob>

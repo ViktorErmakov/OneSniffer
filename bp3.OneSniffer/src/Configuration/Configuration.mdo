@@ -58,6 +58,7 @@
   <commonModules>CommonModule.ЛогированиеТрафика</commonModules>
   <commonModules>CommonModule.ЛогированиеТрафикаПереопределяемый</commonModules>
   <commonModules>CommonModule.ЛогированиеТрафикаПовтИсп</commonModules>
+  <commonModules>CommonModule.РегламентныеЗаданияПереопределяемый</commonModules>
   <httpServices>HTTPService.OneSniffer_Демо</httpServices>
   <commonCommands>CommonCommand.OneSniffer_ЛогиТрафика</commonCommands>
   <constants>Constant.OneSniffer_ДатаЧтенияЖР</constants>
@@ -65,4 +66,5 @@
   <enums>Enum.НаправлениеHTTPЛога</enums>
   <enums>Enum.НазначениеЛога</enums>
   <informationRegisters>InformationRegister.ЛогиТрафика</informationRegisters>
+  <scheduledJobs>ScheduledJob.OneSniffer_ОчисткаЛоговТрафика</scheduledJobs>
 </mdclass:Configuration>
