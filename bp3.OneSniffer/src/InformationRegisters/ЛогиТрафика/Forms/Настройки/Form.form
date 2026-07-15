@@ -573,7 +573,7 @@
       <titleLocation>Right</titleLocation>
       <toolTip>
         <key>ru</key>
-        <value>Записи старше указанного числа дней удаляются регламентным заданием. При 0 автоочистка отключена, блок настроек ниже скрыт.</value>
+        <value>Записи старше указанного числа дней удаляются регламентным заданием. При 0 автоочистка отключена, блок настроек скрыт.</value>
       </toolTip>
       <toolTipRepresentation>ShowBottom</toolTipRepresentation>
       <handlers>
@@ -629,11 +629,6 @@
         <extendedTooltip>
           <name>СообщениеРегламентноеЗаданиеНедоступноРасширеннаяПодсказка</name>
           <id>97</id>
-          <visible>true</visible>
-          <enabled>true</enabled>
-          <userVisible>
-            <common>true</common>
-          </userVisible>
           <type>Label</type>
           <autoMaxWidth>true</autoMaxWidth>
           <autoMaxHeight>true</autoMaxHeight>
@@ -644,11 +639,6 @@
         <contextMenu>
           <name>СообщениеРегламентноеЗаданиеНедоступноКонтекстноеМеню</name>
           <id>98</id>
-          <visible>true</visible>
-          <enabled>true</enabled>
-          <userVisible>
-            <common>true</common>
-          </userVisible>
           <autoFill>true</autoFill>
         </contextMenu>
         <type>Label</type>
@@ -661,107 +651,6 @@
       <items xsi:type="form:FormGroup">
         <name>ГруппаНастройкиРегламентногоЗадания</name>
         <id>99</id>
-        <items xsi:type="form:FormField">
-          <name>РегламентноеЗаданиеИспользуется</name>
-          <id>100</id>
-          <title>
-            <key>ru</key>
-            <value>Автоматическая очистка по расписанию</value>
-          </title>
-          <visible>true</visible>
-          <enabled>true</enabled>
-          <userVisible>
-            <common>true</common>
-          </userVisible>
-          <dataPath xsi:type="form:DataPath">
-            <segments>РегламентноеЗаданиеИспользуется</segments>
-          </dataPath>
-          <titleLocation>Right</titleLocation>
-          <toolTip>
-            <key>ru</key>
-            <value>Включает или отключает регламентное задание OneSniffer_ОчисткаЛоговТрафика</value>
-          </toolTip>
-          <toolTipRepresentation>Button</toolTipRepresentation>
-          <handlers>
-            <event>OnChange</event>
-            <name>РегламентноеЗаданиеИспользуетсяПриИзменении</name>
-          </handlers>
-          <extendedTooltip>
-            <name>РегламентноеЗаданиеИспользуетсяРасширеннаяПодсказка</name>
-            <id>101</id>
-            <visible>true</visible>
-            <enabled>true</enabled>
-            <userVisible>
-              <common>true</common>
-            </userVisible>
-            <type>Label</type>
-            <autoMaxWidth>true</autoMaxWidth>
-            <autoMaxHeight>true</autoMaxHeight>
-            <extInfo xsi:type="form:LabelDecorationExtInfo">
-              <horizontalAlign>Left</horizontalAlign>
-            </extInfo>
-          </extendedTooltip>
-          <contextMenu>
-            <name>РегламентноеЗаданиеИспользуетсяКонтекстноеМеню</name>
-            <id>102</id>
-            <visible>true</visible>
-            <enabled>true</enabled>
-            <userVisible>
-              <common>true</common>
-            </userVisible>
-            <autoFill>true</autoFill>
-          </contextMenu>
-          <type>CheckBoxField</type>
-          <editMode>Enter</editMode>
-          <showInHeader>true</showInHeader>
-          <headerHorizontalAlign>Left</headerHorizontalAlign>
-          <showInFooter>true</showInFooter>
-          <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
-        </items>
-        <items xsi:type="form:Decoration">
-          <name>ПредставлениеРасписанияОчистки</name>
-          <id>103</id>
-          <title>
-            <key>ru</key>
-            <value>Расписание не задано</value>
-          </title>
-          <visible>true</visible>
-          <enabled>true</enabled>
-          <userVisible>
-            <common>true</common>
-          </userVisible>
-          <extendedTooltip>
-            <name>ПредставлениеРасписанияОчисткиРасширеннаяПодсказка</name>
-            <id>104</id>
-            <visible>true</visible>
-            <enabled>true</enabled>
-            <userVisible>
-              <common>true</common>
-            </userVisible>
-            <type>Label</type>
-            <autoMaxWidth>true</autoMaxWidth>
-            <autoMaxHeight>true</autoMaxHeight>
-            <extInfo xsi:type="form:LabelDecorationExtInfo">
-              <horizontalAlign>Left</horizontalAlign>
-            </extInfo>
-          </extendedTooltip>
-          <contextMenu>
-            <name>ПредставлениеРасписанияОчисткиКонтекстноеМеню</name>
-            <id>105</id>
-            <visible>true</visible>
-            <enabled>true</enabled>
-            <userVisible>
-              <common>true</common>
-            </userVisible>
-            <autoFill>true</autoFill>
-          </contextMenu>
-          <type>Label</type>
-          <autoMaxWidth>true</autoMaxWidth>
-          <autoMaxHeight>true</autoMaxHeight>
-          <extInfo xsi:type="form:LabelDecorationExtInfo">
-            <horizontalAlign>Left</horizontalAlign>
-          </extInfo>
-        </items>
         <items xsi:type="form:FormGroup">
           <name>ГруппаДействияРегламентногоЗадания</name>
           <id>106</id>
@@ -770,7 +659,7 @@
             <id>107</id>
             <title>
               <key>ru</key>
-              <value>Настроить…</value>
+              <value>Отключено</value>
             </title>
             <visible>true</visible>
             <enabled>true</enabled>
@@ -779,17 +668,12 @@
             </userVisible>
             <toolTip>
               <key>ru</key>
-              <value>Открывает карточку регламентного задания (форма БСП) для настройки расписания</value>
+              <value>Открывает карточку регламентного задания OneSniffer_ОчисткаЛоговТрафика (форма БСП) для включения и настройки расписания</value>
             </toolTip>
-            <toolTipRepresentation>Button</toolTipRepresentation>
+            <toolTipRepresentation>None</toolTipRepresentation>
             <extendedTooltip>
               <name>НастроитьРегламентноеЗаданиеРасширеннаяПодсказка</name>
               <id>108</id>
-              <visible>true</visible>
-              <enabled>true</enabled>
-              <userVisible>
-                <common>true</common>
-              </userVisible>
               <type>Label</type>
               <autoMaxWidth>true</autoMaxWidth>
               <autoMaxHeight>true</autoMaxHeight>
@@ -800,11 +684,6 @@
             <contextMenu>
               <name>НастроитьРегламентноеЗаданиеКонтекстноеМеню</name>
               <id>109</id>
-              <visible>true</visible>
-              <enabled>true</enabled>
-              <userVisible>
-                <common>true</common>
-              </userVisible>
               <autoFill>true</autoFill>
             </contextMenu>
             <type>Label</type>
@@ -834,15 +713,10 @@
               <key>ru</key>
               <value>Запускает очистку вне очереди в фоновом задании (не дожидаясь расписания)</value>
             </toolTip>
-            <toolTipRepresentation>Button</toolTipRepresentation>
+            <toolTipRepresentation>None</toolTipRepresentation>
             <extendedTooltip>
               <name>ВыполнитьРегламентноеЗаданиеСейчасРасширеннаяПодсказка</name>
               <id>111</id>
-              <visible>true</visible>
-              <enabled>true</enabled>
-              <userVisible>
-                <common>true</common>
-              </userVisible>
               <type>Label</type>
               <autoMaxWidth>true</autoMaxWidth>
               <autoMaxHeight>true</autoMaxHeight>
@@ -853,11 +727,6 @@
             <contextMenu>
               <name>ВыполнитьРегламентноеЗаданиеСейчасКонтекстноеМеню</name>
               <id>112</id>
-              <visible>true</visible>
-              <enabled>true</enabled>
-              <userVisible>
-                <common>true</common>
-              </userVisible>
               <autoFill>true</autoFill>
             </contextMenu>
             <type>Label</type>
@@ -879,11 +748,6 @@
           <extendedTooltip>
             <name>ГруппаДействияРегламентногоЗаданияРасширеннаяПодсказка</name>
             <id>113</id>
-            <visible>true</visible>
-            <enabled>true</enabled>
-            <userVisible>
-              <common>true</common>
-            </userVisible>
             <type>Label</type>
             <autoMaxWidth>true</autoMaxWidth>
             <autoMaxHeight>true</autoMaxHeight>
@@ -893,7 +757,7 @@
           </extendedTooltip>
           <type>UsualGroup</type>
           <extInfo xsi:type="form:UsualGroupExtInfo">
-            <group>AlwaysHorizontal</group>
+            <group>Vertical</group>
             <behavior>Auto</behavior>
             <showLeftMargin>true</showLeftMargin>
             <united>true</united>
@@ -909,11 +773,6 @@
         <extendedTooltip>
           <name>ГруппаНастройкиРегламентногоЗаданияРасширеннаяПодсказка</name>
           <id>114</id>
-          <visible>true</visible>
-          <enabled>true</enabled>
-          <userVisible>
-            <common>true</common>
-          </userVisible>
           <type>Label</type>
           <autoMaxWidth>true</autoMaxWidth>
           <autoMaxHeight>true</autoMaxHeight>
@@ -943,11 +802,6 @@
       <extendedTooltip>
         <name>ГруппаРегламентногоЗаданияРасширеннаяПодсказка</name>
         <id>115</id>
-        <visible>true</visible>
-        <enabled>true</enabled>
-        <userVisible>
-          <common>true</common>
-        </userVisible>
         <type>Label</type>
         <autoMaxWidth>true</autoMaxWidth>
         <autoMaxHeight>true</autoMaxHeight>
@@ -988,7 +842,7 @@
     </extendedTooltip>
     <type>UsualGroup</type>
     <extInfo xsi:type="form:UsualGroupExtInfo">
-      <group>Vertical</group>
+      <group>AlwaysHorizontal</group>
       <behavior>Collapsible</behavior>
       <controlRepresentation>Picture</controlRepresentation>
       <representation>WeakSeparation</representation>
