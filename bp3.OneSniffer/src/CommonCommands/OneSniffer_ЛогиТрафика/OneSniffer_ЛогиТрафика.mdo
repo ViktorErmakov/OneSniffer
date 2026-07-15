@@ -7,7 +7,7 @@
   </synonym>
   <synonym>
     <key>ru</key>
-    <value>Логи трафика (OneSniffer)</value>
+    <value>OneSniffer</value>
   </synonym>
   <group>ActionsPanelTools</group>
   <commandParameterType/>

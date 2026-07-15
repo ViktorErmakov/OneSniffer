@@ -476,7 +476,7 @@
         <titleLocation>Right</titleLocation>
         <toolTip>
           <key>ru</key>
-          <value>Импорт из ЖР в фоновом задании при открытии списка</value>
+          <value>Импорт из ЖР в фоновом задании при открытии формы OneSniffer</value>
         </toolTip>
         <toolTipRepresentation>ShowBottom</toolTipRepresentation>
         <extendedTooltip>
