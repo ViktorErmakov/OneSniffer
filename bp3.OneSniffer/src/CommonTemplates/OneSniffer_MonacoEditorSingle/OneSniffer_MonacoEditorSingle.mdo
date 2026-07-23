@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonTemplate xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="a0b83163-68b3-4aad-89c8-327d232e5fe4">
+  <name>OneSniffer_MonacoEditorSingle</name>
+  <synonym>
+    <key>ru</key>
+    <value>Monaco editor (single HTML)</value>
+  </synonym>
+  <templateType>BinaryData</templateType>
+</mdclass:CommonTemplate>

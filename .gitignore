@@ -1,3 +1,5 @@
 .dev.env
 tools/.packages/
 /Releases
+monaco-html/node_modules/
+monaco-html/dist/

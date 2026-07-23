@@ -5,25 +5,24 @@
     <value>Протокол HTTP запроса</value>
   </title>
   <items xsi:type="form:FormField">
-    <name>Текст</name>
-    <id>1</id>
+    <name>HTMLТекст</name>
+    <id>10</id>
     <visible>true</visible>
     <enabled>true</enabled>
     <userVisible>
       <common>true</common>
     </userVisible>
     <dataPath xsi:type="form:DataPath">
-      <segments>Текст</segments>
+      <segments>HTMLТекст</segments>
     </dataPath>
     <titleLocation>None</titleLocation>
+    <handlers>
+      <event>DocumentComplete</event>
+      <name>HTMLТекстДокументСформирован</name>
+    </handlers>
     <extendedTooltip>
-      <name>ТекстРасширеннаяПодсказка</name>
-      <id>3</id>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <userVisible>
-        <common>true</common>
-      </userVisible>
+      <name>HTMLТекстРасширеннаяПодсказка</name>
+      <id>11</id>
       <type>Label</type>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>
@@ -32,27 +31,22 @@
       </extInfo>
     </extendedTooltip>
     <contextMenu>
-      <name>ТекстКонтекстноеМеню</name>
-      <id>2</id>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <userVisible>
-        <common>true</common>
-      </userVisible>
+      <name>HTMLТекстКонтекстноеМеню</name>
+      <id>12</id>
       <autoFill>true</autoFill>
     </contextMenu>
-    <type>InputField</type>
+    <type>HTMLDocumentField</type>
     <editMode>Enter</editMode>
     <showInHeader>true</showInHeader>
     <headerHorizontalAlign>Left</headerHorizontalAlign>
     <showInFooter>true</showInFooter>
-    <extInfo xsi:type="form:InputFieldExtInfo">
+    <extInfo xsi:type="form:HtmlFieldExtInfo">
+      <width>100</width>
+      <autoMaxWidth>true</autoMaxWidth>
+      <height>20</height>
+      <autoMaxHeight>true</autoMaxHeight>
       <horizontalStretch>true</horizontalStretch>
       <verticalStretch>true</verticalStretch>
-      <wrap>true</wrap>
-      <multiLine>true</multiLine>
-      <chooseType>true</chooseType>
-      <typeDomainEnabled>true</typeDomainEnabled>
     </extInfo>
   </items>
   <items xsi:type="form:Button">
@@ -66,11 +60,6 @@
     <extendedTooltip>
       <name>ЗакрытьРасширеннаяПодсказка</name>
       <id>5</id>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <userVisible>
-        <common>true</common>
-      </userVisible>
       <type>Label</type>
       <autoMaxWidth>true</autoMaxWidth>
       <autoMaxHeight>true</autoMaxHeight>
@@ -90,16 +79,15 @@
   <autoCommandBar>
     <name>ФормаКоманднаяПанель</name>
     <id>-1</id>
-    <visible>true</visible>
-    <enabled>true</enabled>
-    <userVisible>
-      <common>true</common>
-    </userVisible>
     <horizontalAlign>Left</horizontalAlign>
   </autoCommandBar>
   <handlers>
     <event>OnCreateAtServer</event>
     <name>ПриСозданииНаСервере</name>
+  </handlers>
+  <handlers>
+    <event>OnOpen</event>
+    <name>ПриОткрытии</name>
   </handlers>
   <autoUrl>true</autoUrl>
   <group>Vertical</group>
@@ -143,8 +131,116 @@
       <common>true</common>
     </edit>
   </attributes>
+  <attributes>
+    <name>HTMLТекст</name>
+    <title>
+      <key>ru</key>
+      <value>HTML текст</value>
+    </title>
+    <id>3</id>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers/>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>АдресМакетаРедактора</name>
+    <title>
+      <key>ru</key>
+      <value>Адрес макета редактора</value>
+    </title>
+    <id>6</id>
+    <valueType>
+      <types>String</types>
+    </valueType>
+  </attributes>
+  <attributes>
+    <name>КаталогРедактора</name>
+    <title>
+      <key>ru</key>
+      <value>Каталог редактора</value>
+    </title>
+    <id>8</id>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers/>
+    </valueType>
+  </attributes>
+  <attributes>
+    <name>ИсходникиРедактораЗагружены</name>
+    <title>
+      <key>ru</key>
+      <value>Исходники редактора загружены</value>
+    </title>
+    <id>9</id>
+    <valueType>
+      <types>Boolean</types>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
+  <attributes>
+    <name>АдресТекстаПротокола</name>
+    <title>
+      <key>ru</key>
+      <value>Адрес текста протокола</value>
+    </title>
+    <id>7</id>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers/>
+    </valueType>
+  </attributes>
+  <attributes>
+    <name>ЯзыкРедактора</name>
+    <title>
+      <key>ru</key>
+      <value>Язык редактора</value>
+    </title>
+    <id>13</id>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers/>
+    </valueType>
+    <view>
+      <common>true</common>
+    </view>
+    <edit>
+      <common>true</common>
+    </edit>
+  </attributes>
   <parameters>
     <name>АдресХранилища</name>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers/>
+    </valueType>
+  </parameters>
+  <parameters>
+    <name>Заголовок</name>
+    <valueType>
+      <types>String</types>
+      <stringQualifiers/>
+    </valueType>
+  </parameters>
+  <parameters>
+    <name>Ключ</name>
+    <valueType>
+      <types>AnyRef</types>
+    </valueType>
+  </parameters>
+  <parameters>
+    <name>Язык</name>
     <valueType>
       <types>String</types>
       <stringQualifiers/>

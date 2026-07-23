@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>OneSniffer Monaco</title>
+  <style>
+    html, body, #container {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #fffffe;
+    }
+  </style>
+</head>
+<body>
+  <div id="container"></div>
+  <script>
+    // Поле HTML 1С: workers недоступны — заглушка (как в bsl_console / старом inline-бандле).
+    self.MonacoEnvironment = {
+      getWorkerUrl: function () {
+        return './vs/base/worker/workerMain.js';
+      },
+      getWorker: function () {
+        return {
+          postMessage: function () {},
+          addEventListener: function () {},
+          removeEventListener: function () {},
+          terminate: function () {}
+        };
+      }
+    };
+  </script>
+  <script src="./vs/loader.js"></script>
+  <script src="./rest-language.js"></script>
+  <script src="./bsl-language.js"></script>
+  <script src="./editor.js"></script>
+  <script>
+    require.config({ paths: { vs: './vs' } });
+    require(['vs/editor/editor.main'], function () {
+      if (typeof window.OneSnifferMonacoBootstrap === 'function') {
+        window.OneSnifferMonacoBootstrap(monaco);
+      }
+    });
+  </script>
+</body>
+</html>

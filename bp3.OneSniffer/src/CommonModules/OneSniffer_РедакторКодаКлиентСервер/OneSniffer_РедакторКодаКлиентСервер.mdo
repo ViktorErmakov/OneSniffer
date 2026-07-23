@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:CommonModule xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="fa98969b-556b-41f4-bc3b-9a01899c2c71">
+  <name>OneSniffer_РедакторКодаКлиентСервер</name>
+  <synonym>
+    <key>ru</key>
+    <value>OneSniffer редактор кода (клиент-сервер)</value>
+  </synonym>
+  <clientManagedApplication>true</clientManagedApplication>
+  <server>true</server>
+  <externalConnection>true</externalConnection>
+  <clientOrdinaryApplication>true</clientOrdinaryApplication>
+</mdclass:CommonModule>

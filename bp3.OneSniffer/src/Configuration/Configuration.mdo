@@ -53,18 +53,24 @@
   <commonPictures>CommonPicture.OneSniffer_СохранитьЗапрос</commonPictures>
   <commonPictures>CommonPicture.OneSniffer_Стрелки</commonPictures>
   <commonPictures>CommonPicture.OneSniffer_УдалитьЗапрос</commonPictures>
+  <commonTemplates>CommonTemplate.OneSniffer_MonacoEditor</commonTemplates>
+  <commonTemplates>CommonTemplate.OneSniffer_MonacoEditorSingle</commonTemplates>
   <commonModules>CommonModule._HTTPСоединение</commonModules>
   <commonModules>CommonModule._HTTPСервис</commonModules>
   <commonModules>CommonModule.ЛогированиеТрафика</commonModules>
   <commonModules>CommonModule.ЛогированиеТрафикаПереопределяемый</commonModules>
   <commonModules>CommonModule.ЛогированиеТрафикаПовтИсп</commonModules>
+  <commonModules>CommonModule.OneSniffer_РедакторКодаКлиент</commonModules>
+  <commonModules>CommonModule.OneSniffer_РедакторКодаКлиентСервер</commonModules>
+  <commonModules>CommonModule.OneSniffer_РедакторКодаВызовСервера</commonModules>
   <commonModules>CommonModule.РегламентныеЗаданияПереопределяемый</commonModules>
+  <commonModules>CommonModule.OneSniffer_РедакторКода</commonModules>
   <httpServices>HTTPService.OneSniffer_Демо</httpServices>
+  <scheduledJobs>ScheduledJob.OneSniffer_ОчисткаЛоговТрафика</scheduledJobs>
   <commonCommands>CommonCommand.OneSniffer_ЛогиТрафика</commonCommands>
   <constants>Constant.OneSniffer_ДатаЧтенияЖР</constants>
   <enums>Enum.МетодHTTP</enums>
   <enums>Enum.НаправлениеHTTPЛога</enums>
   <enums>Enum.НазначениеЛога</enums>
   <informationRegisters>InformationRegister.ЛогиТрафика</informationRegisters>
-  <scheduledJobs>ScheduledJob.OneSniffer_ОчисткаЛоговТрафика</scheduledJobs>
 </mdclass:Configuration>

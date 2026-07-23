@@ -1,0 +1,38 @@
+{
+
+  "name": "onesniffer-monaco-html",
+
+  "version": "2.0.0",
+
+  "private": true,
+
+  "description": "Multi-file Monaco Editor (AMD) for OneSniffer — JSON + REST, like bsl_console layout",
+
+  "scripts": {
+
+    "build": "powershell -NoProfile -ExecutionPolicy Bypass -File ./build.ps1",
+
+    "build:single": "node ./build-single.mjs",
+
+    "postinstall": "node -e \"const fs=require('fs'); const p='node_modules/monaco-editor/min/vs/loader.js'; if(!fs.existsSync(p)) process.exit(1);\""
+
+  },
+
+  "author": "Viktor Ermakov",
+
+  "license": "MIT",
+
+  "dependencies": {
+
+    "monaco-editor": "0.20.0"
+
+  },
+
+  "devDependencies": {
+
+    "esbuild": "^0.25.0"
+
+  }
+
+}
+

@@ -30,6 +30,9 @@
 | `CommonModule._HTTPСервис` | Публичный API входящих HTTP-сервисов |
 | `HTTPService.OneSniffer_Демо` | Демо `GET /hs/onesniffer/ping` |
 | `CommonModule.ЛогированиеТрафика` | Настройки, сериализация, markdown, повтор запросов, импорт/экспорт |
+| `CommonTemplate.OneSniffer_MonacoEditor` | BinaryData ZIP multi-file Monaco (`Template.bin`: `index.html` + `vs/` + glue), сборка из `monaco-html/` |
+| `CommonTemplate.OneSniffer_MonacoEditorSingle` | BinaryData single-page HTML Monaco (эксперимент вкладка «Ответ»), `editor.single.html` |
+| `CommonModule.OneSniffer_РедакторКода*` | Мост 1С ↔ Monaco: ZIP→temp→`index.html`, API через `Документ.defaultView` |
 | `CommonModule.ЛогированиеТрафикаПереопределяемый` | Точка расширения для имён событий (пустая) |
 | `CommonModule.ЛогированиеТрафикаПовтИсп` | Закомментированный код переменных среды ОС |
 | `InformationRegister.ЛогиТрафика` | Хранение логов + формы Список / Просмотр / Настройки / Авторизация |
@@ -137,7 +140,7 @@ Header: value
 | [12](https://github.com/ViktorErmakov/OneSniffer/issues/12) | Сохранение/загрузка лога в файл | ✅ closed (июн 2026) | Markdown import/export в README; env-автосохранение — фаза 2 |
 | [14](https://github.com/ViktorErmakov/OneSniffer/issues/14) | Документация README и настроек | ✅ closed (июн 2026) | README + встроенная справка из README (`tools/build-docs.ps1`) |
 | [18](https://github.com/ViktorErmakov/OneSniffer/issues/18) | «Писать тело» только вместе с ЖР | ✅ closed (май 2026) | `ЗаписыватьВРСТело` / `ЗаписыватьВЖРТело` разделены |
-| [8](https://github.com/ViktorErmakov/OneSniffer/issues/8) | Monaco Editor на форме запроса | 🟡 open | Улучшение редактора, не блокер ядра |
+| [8](https://github.com/ViktorErmakov/OneSniffer/issues/8) | Monaco Editor на форме запроса | ✅ done | `monaco-html` + макет `OneSniffer_MonacoEditor`, формы Список/Просмотр |
 | [7](https://github.com/ViktorErmakov/OneSniffer/issues/7) | Демо-база | 🟡 open | Инфраструктура для тестов исходящих |
 | [17](https://github.com/ViktorErmakov/OneSniffer/issues/17) | WSProxy / SOAP | 🟡 open | **Не HTTP**; отдельное направление после исходящего HTTP |
 
@@ -216,7 +219,7 @@ Header: value
 
 #### Фаза 5 — по желанию (не блокирует «готово»)
 
-- [#8](https://github.com/ViktorErmakov/OneSniffer/issues/8) Monaco Editor  
+- [#8](https://github.com/ViktorErmakov/OneSniffer/issues/8) Monaco Editor — **сделано** (multi-file AMD в `monaco-html/`, макет ZIP `OneSniffer_MonacoEditor`, см. `documentation/monaco-editor-update.md`)
 - [#7](https://github.com/ViktorErmakov/OneSniffer/issues/7) демо-база с примерами `_ВызватьHTTPМетод`  
 - P7 экспорт HAR / `.http`  
 - `ЛогированиеТрафикаПереопределяемый.ИмяСобытия` — пример в документации для хоста  
@@ -411,7 +414,7 @@ Header: value
 |------|----------|---------|
 | Верх | Период, повтор, просмотр, правка запроса, файл, настройки | Много кнопок в нескольких группах |
 | Список | Динамический список, автообновление **30 с**, конец списка | Поиск **отключён** (`searchStringLocation: None`) |
-| Детали (`Содержание`) | Скрыты по умолчанию (`ПоказыватьДанные`) | При выборе строки — серверный вызов с задержкой **0,1 с** |
+| Детали (`Содержание`) | Скрыты по умолчанию (`ПоказыватьДанные`) | При включении — ZIP Monaco → temp → `index.html`; текст после `ДокументСформирован` |
 | Запрос | Вкладки: URL, событие, тело, заголовки (ТЗ), дерево JSON | URL и тело склеены в `ТекущееТелоЗапроса` |
 | Ответ | Вкладки: тело, заголовки, дерево JSON | Заголовок вкладки с кодом ответа |
 | Редактор | `ПроизвольныйЗапрос` (текстовый документ) | Postman-подобный markdown, curl/1С, тест Unsplash |

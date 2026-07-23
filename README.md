@@ -39,8 +39,9 @@
 - перехват и запись **исходящих** вызовов HTTP через обёртку `_HTTPСоединение._ВызватьHTTPМетод`;
 - запись **входящих** вызовов HTTP-сервисов через `_HTTPСервис.ЗаписатьВходящийЛог`;
 - демо HTTP-сервис расширения `OneSniffer_Демо` (`GET …/hs/onesniffer/ping`) и кнопка **«Демо входящий HTTP (IIS)»** на форме списка логов;
-- просмотр запроса и ответа, в том числе JSON в виде дерева;
-- повтор и редактирование произвольного запроса (markdown-подобный формат);
+- просмотр и редактирование тел в **Monaco Editor** (подсветка JSON / REST);
+- превью картинок из ответа (`image/*` и base64 в JSON) на вкладке «Картинки»;
+- повтор и редактирование произвольного запроса (markdown-подобный формат `.rest`);
 - экспорт в markdown, **curl**, код 1С; импорт логов из файла;
 - маскирование заголовков `Authorization`, `Cookie`, `X-API-Key` при записи;
 - догрузка записей из журнала регистрации (успешные вызовы и ошибки).
@@ -213,6 +214,20 @@ curl -s "{BASE}/hs/onesniffer/ping"
 ```
 
 Скрипт обновляет встроенную HTML-справку регистра `ЛогиТрафика` (`Ext/Help/ru.html`).
+
+## Обновление Monaco Editor (для разработчиков)
+
+Редактор — multi-file AMD (как [bsl_console](https://github.com/salexdv/bsl_console)): ZIP в макете `OneSniffer_MonacoEditor`; single-page HTML в `OneSniffer_MonacoEditorSingle` (эксперимент для вкладки «Ответ»).
+
+```powershell
+cd monaco-html
+npm i
+npm run build
+cd ..
+.\tools\sync-monaco-maket.ps1   # ZIP + editor.single.html → оба Template.bin
+```
+
+В EDT обновите проект (`F5`). Подробности и веб-публикация (same-origin; GitHub Pages не для моста 1С↔JS): [`documentation/monaco-editor-update.md`](documentation/monaco-editor-update.md).
 
 ## Ограничения
 
