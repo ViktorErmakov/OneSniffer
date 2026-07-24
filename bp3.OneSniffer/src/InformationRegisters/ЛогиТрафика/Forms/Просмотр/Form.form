@@ -150,14 +150,15 @@
     </edit>
   </attributes>
   <attributes>
-    <name>АдресМакетаРедактора</name>
+    <name>ТекстМакетаРедактора</name>
     <title>
       <key>ru</key>
-      <value>Адрес макета редактора</value>
+      <value>Текст макета редактора</value>
     </title>
     <id>6</id>
     <valueType>
       <types>String</types>
+      <stringQualifiers/>
     </valueType>
   </attributes>
   <attributes>

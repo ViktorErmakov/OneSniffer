@@ -20,10 +20,9 @@
 #   languages json | rest | bsl | plaintext + rest-language.js + bsl-language.js
 #   window API: init, updateText, getText, setLanguageMode, setReadOnly, setTheme, formatDocument, …
 #   workers stub; default theme vs, fontSize 15, formatOnPaste true
-#   ZIP -> CommonTemplate.OneSniffer_MonacoEditor
-#   single HTML -> CommonTemplate.OneSniffer_MonacoEditorSingle
+#   single HTML -> CommonTemplate.OneSniffer_MonacoEditorSingle (единственный макет в конфигурации)
 #   bump OneSniffer_РедакторКодаКлиентСервер.ВерсияМакетаРедактора()
-#   no configuration metadata in JS
+#   no configuration metadata in JS; no ZIP maket; no АдресСтатики
 # Commands:
 #   cd monaco-html; npm i; npm run build; cd ..; .\tools\sync-monaco-maket.ps1
 # =============================================================================

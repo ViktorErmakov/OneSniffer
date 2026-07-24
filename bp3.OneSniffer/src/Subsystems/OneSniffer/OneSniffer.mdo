@@ -27,7 +27,6 @@
   <content>CommonPicture.OneSniffer_СоздатьЗапрос</content>
   <content>CommonPicture.OneSniffer_УдалитьЗапрос</content>
   <content>CommonPicture.OneSniffer_ДеревоДанных</content>
-  <content>CommonTemplate.OneSniffer_MonacoEditor</content>
   <content>CommonModule.OneSniffer_РедакторКода</content>
   <content>CommonModule.OneSniffer_РедакторКодаКлиент</content>
   <content>CommonModule.OneSniffer_РедакторКодаКлиентСервер</content>

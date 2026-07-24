@@ -1115,55 +1115,6 @@
       <editMode>Enter</editMode>
       <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
     </items>
-    <items xsi:type="form:FormField">
-      <name>АдресСтатики</name>
-      <id>146</id>
-      <title>
-        <key>ru</key>
-        <value>Адрес статики (веб)</value>
-      </title>
-      <visible>true</visible>
-      <enabled>true</enabled>
-      <userVisible>
-        <common>true</common>
-      </userVisible>
-      <dataPath xsi:type="form:DataPath">
-        <segments>АдресСтатики</segments>
-      </dataPath>
-      <extendedTooltip>
-        <name>АдресСтатикиРасширеннаяПодсказка</name>
-        <id>148</id>
-        <type>Label</type>
-        <autoMaxWidth>true</autoMaxWidth>
-        <autoMaxHeight>true</autoMaxHeight>
-        <extInfo xsi:type="form:LabelDecorationExtInfo">
-          <horizontalAlign>Left</horizontalAlign>
-        </extInfo>
-      </extendedTooltip>
-      <contextMenu>
-        <name>АдресСтатикиКонтекстноеМеню</name>
-        <id>147</id>
-        <autoFill>true</autoFill>
-      </contextMenu>
-      <type>InputField</type>
-      <editMode>Enter</editMode>
-      <showInHeader>true</showInHeader>
-      <headerHorizontalAlign>Left</headerHorizontalAlign>
-      <showInFooter>true</showInFooter>
-      <extInfo xsi:type="form:InputFieldExtInfo">
-        <autoMaxWidth>true</autoMaxWidth>
-        <autoMaxHeight>true</autoMaxHeight>
-        <horizontalStretch>true</horizontalStretch>
-        <wrap>false</wrap>
-        <chooseType>false</chooseType>
-        <typeDomainEnabled>false</typeDomainEnabled>
-        <textEdit>true</textEdit>
-        <inputHint>
-          <key>ru</key>
-          <value>https://host/onesniffer-monaco/index.html</value>
-        </inputHint>
-      </extInfo>
-    </items>
     <visible>true</visible>
     <enabled>true</enabled>
     <userVisible>
@@ -1795,24 +1746,6 @@
       <common>true</common>
     </edit>
     <savedData>true</savedData>
-  </attributes>
-  <attributes>
-    <name>АдресСтатики</name>
-    <title>
-      <key>ru</key>
-      <value>Адрес статики редактора</value>
-    </title>
-    <id>30</id>
-    <valueType>
-      <types>String</types>
-      <stringQualifiers/>
-    </valueType>
-    <view>
-      <common>true</common>
-    </view>
-    <edit>
-      <common>true</common>
-    </edit>
   </attributes>
   <formCommands>
     <name>Готово</name>

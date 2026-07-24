@@ -217,17 +217,17 @@ curl -s "{BASE}/hs/onesniffer/ping"
 
 ## Обновление Monaco Editor (для разработчиков)
 
-Редактор — multi-file AMD (как [bsl_console](https://github.com/salexdv/bsl_console)): ZIP в макете `OneSniffer_MonacoEditor`; single-page HTML в `OneSniffer_MonacoEditorSingle` (эксперимент для вкладки «Ответ»).
+Редактор — single-page HTML в макете `OneSniffer_MonacoEditorSingle` (строка на форме при открытии; без ZIP и без «Адреса статики»).
 
 ```powershell
 cd monaco-html
 npm i
 npm run build
 cd ..
-.\tools\sync-monaco-maket.ps1   # ZIP + editor.single.html → оба Template.bin
+.\tools\sync-monaco-maket.ps1   # editor.single.html → Template.bin
 ```
 
-В EDT обновите проект (`F5`). Подробности и веб-публикация (same-origin; GitHub Pages не для моста 1С↔JS): [`documentation/monaco-editor-update.md`](documentation/monaco-editor-update.md).
+В EDT обновите проект (`F5`). Подробности: [`documentation/monaco-editor-update.md`](documentation/monaco-editor-update.md).
 
 ## Ограничения
 
