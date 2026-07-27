@@ -25,7 +25,7 @@
   <configurationExtensionCompatibilityMode>8.3.16</configurationExtensionCompatibilityMode>
   <configurationExtensionPurpose>AddOn</configurationExtensionPurpose>
   <scriptVariant>Russian</scriptVariant>
-  <version>1.0.0.2</version>
+  <version>0.0.0.3</version>
   <briefInformation>
     <key>ru</key>
     <value>Логирование трафика HTTP</value>
@@ -53,6 +53,8 @@
   <commonPictures>CommonPicture.OneSniffer_СохранитьЗапрос</commonPictures>
   <commonPictures>CommonPicture.OneSniffer_Стрелки</commonPictures>
   <commonPictures>CommonPicture.OneSniffer_УдалитьЗапрос</commonPictures>
+  <commonPictures>CommonPicture.OneSniffer_ЛоготипТекстКартинка</commonPictures>
+  <commonPictures>CommonPicture.OneSniffer_ЛоготипКартинка</commonPictures>
   <commonTemplates>CommonTemplate.OneSniffer_MonacoEditorSingle</commonTemplates>
   <commonModules>CommonModule._HTTPСоединение</commonModules>
   <commonModules>CommonModule._HTTPСервис</commonModules>

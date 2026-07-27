@@ -33,7 +33,7 @@ Otherwise:
 
 Pass criterion: every dependent listed was reviewed or explicitly noted as follow-up risk.
 
-**When EDT MCP is offline:** state in delivery summary: *"Impact analysis not run — EDT MCP unavailable."* Do not silently skip.
+**When EDT MCP is offline:** do **not** complete Gate 3 (or Gates 1–2 / 4–5 that need MCP) via file-only fallback. Per `AGENTS.md`, **hard-stop** the 1C task and tell the user EDT MCP is unavailable. Do not silently skip or deliver “impact not run” as if the change were finished.
 
 ### Gate 4 — Metadata validation (when metadata was edited)
 
@@ -60,5 +60,5 @@ Single procedure, <~20 lines, no public API / metadata wiring impact:
 ## Delivery summary must include
 
 - Files changed and why.
-- EDT validation result (or note if MCP was offline).
+- EDT validation result (required for BSL/metadata delivery; if MCP was offline the task must have been stopped, not delivered).
 - Residual risks and unverified assumptions.

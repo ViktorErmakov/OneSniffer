@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mdclass:CommonCommand xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="237ea41c-ce81-4cf2-b89c-fdc0bd30f611">
+<mdclass:CommonCommand xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="237ea41c-ce81-4cf2-b89c-fdc0bd30f611">
   <name>OneSniffer_ЛогиТрафика</name>
   <synonym>
     <key></key>
@@ -11,5 +11,8 @@
   </synonym>
   <group>ActionsPanelTools</group>
   <commandParameterType/>
-  <representation>Auto</representation>
+  <representation>PictureAndText</representation>
+  <picture xsi:type="core:PictureRef">
+    <picture>CommonPicture.OneSniffer_ЛоготипКартинка</picture>
+  </picture>
 </mdclass:CommonCommand>

@@ -32,4 +32,6 @@
   <content>CommonModule.OneSniffer_РедакторКодаКлиентСервер</content>
   <content>CommonModule.OneSniffer_РедакторКодаВызовСервера</content>
   <content>CommonTemplate.OneSniffer_MonacoEditorSingle</content>
+  <content>CommonPicture.OneSniffer_ЛоготипТекстКартинка</content>
+  <content>CommonPicture.OneSniffer_ЛоготипКартинка</content>
 </mdclass:Subsystem>

@@ -169,7 +169,7 @@ Step-by-step playbooks — `.cursor/rules/tooling-playbooks.mdc`.
 
 ### A. Priority and obligation
 
-1. **Mandatory scope.** Use EDT MCP for risk-bearing 1C work when tools are exposed: BSL / metadata edits or review, code navigation, impact analysis, platform API checks, validation after edits. Pure Markdown / rules work with no factual 1C claims does not require MCP.
+1. **Mandatory scope.** Use EDT MCP for risk-bearing 1C work when tools are exposed: BSL / metadata edits or review, code navigation, impact analysis, platform API checks, validation after edits. Pure Markdown / rules work with no factual 1C claims does not require MCP. If tools are **not** exposed — hard stop per B.2 (do not proceed without MCP).
 2. **Platform documentation.** Use `get_platform_documentation` when versioned platform behaviour or exact API names matter.
 3. **Verify before writing BSL / metadata.** Quick-fix: read target module + direct helpers. Full-cycle: `search_in_code`, `get_metadata_details`, `get_platform_documentation` as needed. In the final answer for non-trivial changes, list context sources used.
 4. **Search discipline.** Before `Grep` / `Glob` on project source — exhaust EDT search per `.cursor/rules/edt-first-search.mdc`.
@@ -178,7 +178,7 @@ Step-by-step playbooks — `.cursor/rules/tooling-playbooks.mdc`.
 ### B. Limits
 
 1. **Verification budget — 1 call per validator by default; up to 3 only if the previous run returned a substantive defect.** Applies to `revalidate_objects` / `get_project_errors` per cycle (one logical edit of one module).
-2. **When EDT MCP is offline** — proceed with file reads; note reduced verification in the delivery summary.
+2. **When EDT MCP is offline / unavailable — hard stop for 1C work.** If the task is in mandatory scope (A.1: BSL / metadata edit or review, code navigation, impact analysis, platform API checks, validation) and EDT MCP tools are missing from the session, return connection errors, or the server is not usable — **do not continue**. Stop immediately, tell the user that EDT MCP is unavailable, and wait for them to restore it (EDT + MCP plugin on port 8765, Cursor reconnect). Do **not** fall back to file-only edits, Python/PowerShell XML surgery, or “reduced verification” delivery for that work. **Exception:** Docs-fix path (Markdown / rules with no verifiable 1C metadata claims) may proceed without MCP.
 
 ### C. Call discipline
 

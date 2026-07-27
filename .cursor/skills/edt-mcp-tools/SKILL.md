@@ -2,7 +2,9 @@
 
 Single MCP server for this project: **EDT MCP Server** (`http://localhost:8765/mcp`).
 
-A tool counts as available only when it is exposed in the current agent session. If EDT MCP is offline, fall back to reading project files (`Read`, `Grep`, `Glob`) and state the limitation in the delivery summary.
+A tool counts as available only when it is exposed in the current agent session.
+
+**Hard stop:** for any 1C task in mandatory MCP scope (`AGENTS.md` → Tooling → A.1), if EDT MCP is offline or tools are not usable — **stop work and tell the user**. Do not fall back to file-only BSL/metadata edits or “reduced verification”. Exception: Docs-fix (Markdown / rules, no verifiable 1C metadata claims).
 
 Load this skill before calling any EDT MCP tool.
 
@@ -70,9 +72,14 @@ For metadata XML / form edits without BSL: `revalidate_objects` + cross-check `m
 
 ## Unavailable server
 
-If EDT MCP tools are missing from the session:
+If EDT MCP tools are missing from the session, calls fail with connection errors, or the server is not usable:
 
-1. Confirm EDT and the MCP plugin are running.
-2. Confirm `.cursor/mcp.json` lists `EDT MCP Server` at `http://localhost:8765/mcp`.
-3. Restart Cursor.
-4. Proceed with file-based analysis; note reduced verification in the delivery summary.
+1. **Stop** any in-progress 1C work in mandatory MCP scope — do not edit BSL / metadata / forms via file tools as a substitute.
+2. Tell the user clearly that EDT MCP is unavailable and that work is paused until it is restored.
+3. Remind the user of the usual recovery steps (they fix the environment; the agent waits):
+   - EDT running with the project imported; MCP plugin listening on port **8765**;
+   - `.cursor/mcp.json` lists `EDT MCP Server` at `http://localhost:8765/mcp`;
+   - restart Cursor so the MCP session reconnects.
+4. Resume only after the user confirms EDT MCP is back, or a probe (`get_server_status` / listed tools) succeeds.
+
+Docs-fix (no BSL/metadata, no factual 1C claims needing EDT) may continue without MCP.
