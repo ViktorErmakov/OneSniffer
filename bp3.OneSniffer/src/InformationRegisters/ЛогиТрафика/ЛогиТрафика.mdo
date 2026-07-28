@@ -12,7 +12,6 @@
   <name>ЛогиТрафика</name>
   <useStandardCommands>true</useStandardCommands>
   <editType>InDialog</editType>
-  <defaultRecordForm>InformationRegister.ЛогиТрафика.Form.Просмотр</defaultRecordForm>
   <defaultListForm>InformationRegister.ЛогиТрафика.Form.Список</defaultListForm>
   <standardAttributes>
     <dataHistory>Use</dataHistory>

@@ -4,3 +4,4 @@ tools/.packages/
 monaco-html/node_modules/
 monaco-html/dist/
 build/
+/docs/images/infostart/

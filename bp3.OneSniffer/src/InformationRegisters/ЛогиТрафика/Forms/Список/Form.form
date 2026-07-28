@@ -1586,10 +1586,6 @@
           <event>OnActivateRow</event>
           <name>СписокПриАктивизацииСтроки</name>
         </handlers>
-        <handlers>
-          <event>BeforeDeleteRow</event>
-          <name>СписокПередУдалением</name>
-        </handlers>
         <searchStringAddition>
           <name>СписокСтрокаПоиска</name>
           <id>7</id>
@@ -2761,6 +2757,15 @@
     <edit>
       <common>true</common>
     </edit>
+  </attributes>
+  <attributes>
+    <name>КэшНастроекЛогирования</name>
+    <title>
+      <key>ru</key>
+      <value>Кэш настроек логирования</value>
+    </title>
+    <id>47</id>
+    <valueType/>
   </attributes>
   <formCommands>
     <name>СохранитьЛогиВФайл</name>
