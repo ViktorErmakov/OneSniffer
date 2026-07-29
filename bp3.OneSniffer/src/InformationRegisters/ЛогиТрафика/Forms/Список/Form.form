@@ -120,6 +120,36 @@
         <currentRowUse>Auto</currentRowUse>
       </extInfo>
     </items>
+    <items xsi:type="form:Decoration">
+      <name>ДекорацияРастяжкаЛево</name>
+      <id>539</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <extendedTooltip>
+        <name>ДекорацияРастяжкаЛевоРасширеннаяПодсказка</name>
+        <id>540</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>ДекорацияРастяжкаЛевоКонтекстноеМеню</name>
+        <id>541</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <horizontalStretch>true</horizontalStretch>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Center</horizontalAlign>
+      </extInfo>
+    </items>
     <items xsi:type="form:FormGroup">
       <name>ГруппаЦентр</name>
       <id>333</id>
@@ -168,6 +198,8 @@
         <key>ru</key>
         <value>Группа центр</value>
       </title>
+      <horizontalStretch>false</horizontalStretch>
+      <groupHorizontalAlign>Center</groupHorizontalAlign>
       <extendedTooltip>
         <name>ГруппаЦентрРасширеннаяПодсказка</name>
         <id>334</id>
@@ -180,11 +212,41 @@
       </extendedTooltip>
       <type>UsualGroup</type>
       <extInfo xsi:type="form:UsualGroupExtInfo">
-        <group>HorizontalIfPossible</group>
-        <showLeftMargin>true</showLeftMargin>
+        <group>AlwaysHorizontal</group>
+        <horizontalAlign>Center</horizontalAlign>
         <united>true</united>
         <throughAlign>Auto</throughAlign>
         <currentRowUse>Auto</currentRowUse>
+      </extInfo>
+    </items>
+    <items xsi:type="form:Decoration">
+      <name>ДекорацияРастяжкаПраво</name>
+      <id>542</id>
+      <visible>true</visible>
+      <enabled>true</enabled>
+      <userVisible>
+        <common>true</common>
+      </userVisible>
+      <extendedTooltip>
+        <name>ДекорацияРастяжкаПравоРасширеннаяПодсказка</name>
+        <id>543</id>
+        <type>Label</type>
+        <autoMaxWidth>true</autoMaxWidth>
+        <autoMaxHeight>true</autoMaxHeight>
+        <extInfo xsi:type="form:LabelDecorationExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+        </extInfo>
+      </extendedTooltip>
+      <contextMenu>
+        <name>ДекорацияРастяжкаПравоКонтекстноеМеню</name>
+        <id>544</id>
+        <autoFill>true</autoFill>
+      </contextMenu>
+      <autoMaxWidth>true</autoMaxWidth>
+      <autoMaxHeight>true</autoMaxHeight>
+      <horizontalStretch>true</horizontalStretch>
+      <extInfo xsi:type="form:LabelDecorationExtInfo">
+        <horizontalAlign>Center</horizontalAlign>
       </extInfo>
     </items>
     <items xsi:type="form:FormGroup">
@@ -694,6 +756,7 @@
         <key>ru</key>
         <value>Группа команд редактирования</value>
       </title>
+      <horizontalStretch>false</horizontalStretch>
       <extendedTooltip>
         <name>ГруппаКомандРедактированияРасширеннаяПодсказка</name>
         <id>535</id>
@@ -897,6 +960,7 @@
         <key>ru</key>
         <value>Командная панель</value>
       </title>
+      <horizontalStretch>false</horizontalStretch>
       <extendedTooltip>
         <name>ГруппаКоманднойПанелиРасширеннаяПодсказка</name>
         <id>123</id>
