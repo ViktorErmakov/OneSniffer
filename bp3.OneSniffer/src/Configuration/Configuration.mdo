@@ -25,7 +25,7 @@
   <configurationExtensionCompatibilityMode>8.3.16</configurationExtensionCompatibilityMode>
   <configurationExtensionPurpose>AddOn</configurationExtensionPurpose>
   <scriptVariant>Russian</scriptVariant>
-  <version>0.0.0.4</version>
+  <version>0.0.0.5</version>
   <briefInformation>
     <key>ru</key>
     <value>Логирование трафика HTTP</value>

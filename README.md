@@ -12,14 +12,15 @@
 </a>
 <!-- github-only:end -->
 
+![image](https://infostart.ru/bitrix/templates/sandbox_empty/assets/tpl/abo/img/logo.svg)
+https://infostart.ru/1c/tools/2747087/
+
 **OneSniffer** — расширение конфигурации 1С (тип AddOn, префикс `OneSniffer_`), сниффер HTTP внутри платформы: смотрите запрос и ответ в базе, повторяйте вызов, выгружайте curl / код 1С. Подходит, когда нельзя ставить стороннее ПО на сервер или рабочую станцию.
 
 **Важно:** логируются только вызовы, которые вы **явно** перевели на API расширения. Автоматического перехвата всего HTTP платформы нет (opt-in).
 
 Поддерживаются **исходящие** вызовы (`_HTTPСоединение._ВызватьHTTPМетод`) и **входящие** HTTP-сервисы (`_HTTPСервис.ЗаписатьВходящийЛог`).
 
-![image](https://infostart.ru/bitrix/templates/sandbox_empty/assets/tpl/abo/img/logo.svg)
-https://infostart.ru/1c/tools/2747087/
 
 ## Требования
 
