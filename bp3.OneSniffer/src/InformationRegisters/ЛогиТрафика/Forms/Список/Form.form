@@ -633,6 +633,32 @@
           </extInfo>
         </items>
         <items xsi:type="form:Button">
+          <name>ВыполнитьКнопка</name>
+          <id>501</id>
+          <visible>true</visible>
+          <enabled>true</enabled>
+          <userVisible>
+            <common>true</common>
+          </userVisible>
+          <extendedTooltip>
+            <name>ВыполнитьКнопкаРасширеннаяПодсказка</name>
+            <id>502</id>
+            <type>Label</type>
+            <autoMaxWidth>true</autoMaxWidth>
+            <autoMaxHeight>true</autoMaxHeight>
+            <extInfo xsi:type="form:LabelDecorationExtInfo">
+              <horizontalAlign>Left</horizontalAlign>
+            </extInfo>
+          </extendedTooltip>
+          <commandName>Form.Command.ВыполнитьЗапрос</commandName>
+          <representation>PictureAndText</representation>
+          <defaultButton>true</defaultButton>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <placementArea>UserCmds</placementArea>
+          <representationInContextMenu>Auto</representationInContextMenu>
+        </items>
+        <items xsi:type="form:Button">
           <name>РазвернутьРедактор</name>
           <id>253</id>
           <title>
@@ -659,31 +685,6 @@
           <width>3</width>
           <autoMaxWidth>true</autoMaxWidth>
           <height>1</height>
-          <autoMaxHeight>true</autoMaxHeight>
-          <placementArea>UserCmds</placementArea>
-          <representationInContextMenu>Auto</representationInContextMenu>
-        </items>
-        <items xsi:type="form:Button">
-          <name>ВыполнитьКнопка</name>
-          <id>501</id>
-          <visible>true</visible>
-          <enabled>true</enabled>
-          <userVisible>
-            <common>true</common>
-          </userVisible>
-          <extendedTooltip>
-            <name>ВыполнитьКнопкаРасширеннаяПодсказка</name>
-            <id>502</id>
-            <type>Label</type>
-            <autoMaxWidth>true</autoMaxWidth>
-            <autoMaxHeight>true</autoMaxHeight>
-            <extInfo xsi:type="form:LabelDecorationExtInfo">
-              <horizontalAlign>Left</horizontalAlign>
-            </extInfo>
-          </extendedTooltip>
-          <commandName>Form.Command.ВыполнитьЗапрос</commandName>
-          <representation>PictureAndText</representation>
-          <autoMaxWidth>true</autoMaxWidth>
           <autoMaxHeight>true</autoMaxHeight>
           <placementArea>UserCmds</placementArea>
           <representationInContextMenu>Auto</representationInContextMenu>
@@ -864,10 +865,6 @@
         <items xsi:type="form:Button">
           <name>НастройкиЛогирования</name>
           <id>319</id>
-          <title>
-            <key>ru</key>
-            <value>Настройки логирования</value>
-          </title>
           <visible>true</visible>
           <enabled>true</enabled>
           <userVisible>
@@ -2042,8 +2039,8 @@
           </dataPath>
           <titleLocation>None</titleLocation>
           <handlers>
-            <event>DocumentComplete</event>
-            <name>HTMLТелоЗапросаДокументСформирован</name>
+            <event>OnClick</event>
+            <name>HTMLТелоЗапросаПриНажатии</name>
           </handlers>
           <extendedTooltip>
             <name>HTMLТелоЗапросаРасширеннаяПодсказка</name>
@@ -2065,6 +2062,10 @@
           <headerHorizontalAlign>Left</headerHorizontalAlign>
           <showInFooter>true</showInFooter>
           <extInfo xsi:type="form:HtmlFieldExtInfo">
+            <handlers>
+              <event>OnClick</event>
+              <name>HTMLТелоЗапросаПриНажатии</name>
+            </handlers>
             <autoMaxWidth>true</autoMaxWidth>
             <height>4</height>
             <autoMaxHeight>true</autoMaxHeight>
@@ -2127,8 +2128,8 @@
             </dataPath>
             <titleLocation>None</titleLocation>
             <handlers>
-              <event>DocumentComplete</event>
-              <name>HTMLТелоОтветаДокументСформирован</name>
+              <event>OnClick</event>
+              <name>HTMLТелоОтветаПриНажатии</name>
             </handlers>
             <extendedTooltip>
               <name>HTMLТелоОтветаРасширеннаяПодсказка</name>
@@ -2150,6 +2151,10 @@
             <headerHorizontalAlign>Left</headerHorizontalAlign>
             <showInFooter>true</showInFooter>
             <extInfo xsi:type="form:HtmlFieldExtInfo">
+              <handlers>
+                <event>OnClick</event>
+                <name>HTMLТелоОтветаПриНажатии</name>
+              </handlers>
               <autoMaxWidth>true</autoMaxWidth>
               <height>1</height>
               <autoMaxHeight>true</autoMaxHeight>
@@ -2800,6 +2805,15 @@
     <id>47</id>
     <valueType/>
   </attributes>
+  <attributes>
+    <name>КэшМостаРедактора</name>
+    <title>
+      <key>ru</key>
+      <value>Кэш моста редактора</value>
+    </title>
+    <id>48</id>
+    <valueType/>
+  </attributes>
   <formCommands>
     <name>СохранитьЛогиВФайл</name>
     <title>
@@ -2834,13 +2848,13 @@
     <id>2</id>
     <toolTip>
       <key>ru</key>
-      <value>Настройки логирования</value>
+      <value>Настройки</value>
     </toolTip>
     <use>
       <common>true</common>
     </use>
     <picture xsi:type="core:PictureRef">
-      <picture>CommonPicture.OneSniffer_Настройки</picture>
+      <picture>CommonPicture.OneSniffer_ЛоготипКартинка</picture>
     </picture>
     <action xsi:type="form:FormCommandHandlerContainer">
       <handler>

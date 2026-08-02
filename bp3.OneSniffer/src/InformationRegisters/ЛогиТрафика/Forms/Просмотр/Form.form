@@ -17,8 +17,8 @@
     </dataPath>
     <titleLocation>None</titleLocation>
     <handlers>
-      <event>DocumentComplete</event>
-      <name>HTMLТекстДокументСформирован</name>
+      <event>OnClick</event>
+      <name>HTMLТекстПриНажатии</name>
     </handlers>
     <extendedTooltip>
       <name>HTMLТекстРасширеннаяПодсказка</name>
@@ -263,6 +263,15 @@
     <edit>
       <common>true</common>
     </edit>
+  </attributes>
+  <attributes>
+    <name>КэшМостаРедактора</name>
+    <title>
+      <key>ru</key>
+      <value>Кэш моста редактора</value>
+    </title>
+    <id>15</id>
+    <valueType/>
   </attributes>
   <formCommands>
     <name>Сохранить</name>

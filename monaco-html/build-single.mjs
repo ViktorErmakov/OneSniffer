@@ -52,6 +52,7 @@ const html = `<!DOCTYPE html>
 </head>
 <body>
   <div id="container"></div>
+  <button id="V8_request" type="button" style="display:none"></button>
   <script>
 ${js}
   </script>

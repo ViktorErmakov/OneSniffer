@@ -31,7 +31,7 @@
 | `HTTPService.OneSniffer_Демо` | Демо `GET /hs/onesniffer/ping` |
 | `CommonModule.ЛогированиеТрафика` | Настройки, сериализация, markdown, повтор запросов, импорт/экспорт |
 | `CommonTemplate.OneSniffer_MonacoEditorSingle` | BinaryData single-page HTML Monaco (`editor.single.html`), сборка из `monaco-html/` |
-| `CommonModule.OneSniffer_РедакторКода*` | Мост 1С ↔ Monaco: `ТекстМакетаРедактора` на форме → веб HTML / TEMP `*_single.html`, API через `Документ.defaultView` |
+| `CommonModule.OneSniffer_РедакторКода*` | Мост 1С ↔ Monaco: `ТекстМакетаРедактора` → веб HTML / URL ВХ; канал `V8Proxy` + `#V8_request` / `ПриНажатии` (см. `.cursor/rules/html-v8proxy-bridge.mdc`) |
 | `CommonModule.ЛогированиеТрафикаПереопределяемый` | Точка расширения для имён событий (пустая) |
 | `CommonModule.ЛогированиеТрафикаПовтИсп` | Закомментированный код переменных среды ОС |
 | `InformationRegister.ЛогиТрафика` | Хранение логов + формы Список / Просмотр / Настройки / Авторизация |

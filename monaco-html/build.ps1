@@ -4,25 +4,25 @@
 # =============================================================================
 # CHECKLIST: importing patterns from a new salexdv/bsl_console release
 # https://github.com/salexdv/bsl_console/
-# OneSniffer does NOT vendor the full bsl_console (no bslGlobals / metadata / V8Proxy).
+# OneSniffer does NOT vendor the full bsl_console (no bslGlobals / metadata).
+# 1C bridge: V8Proxy + #V8_request (Kanban-style) — see .cursor/rules/html-v8proxy-bridge.mdc
 # =============================================================================
 # BEFORE bump:
 #   1. Read upstream CHANGELOG.md and monaco-editor version in their package.json / webpack branch.
 #   2. WebKit of 1C HTML field: prefer monaco-editor <= 0.30.1; we pin 0.20.0 — do not raise without
 #      manual thin-client check (Список Запрос/Ответ, Просмотр, произвольный rest).
-#   3. Diff only borrowed themes: MonacoEnvironment/workers stub, AMD loader + editor.main,
-#      unique *.html copy (WebBrowser cache), web defaultView limits, automaticLayout/resize.
+#   3. Diff only borrowed themes: MonacoEnvironment/workers stub, automaticLayout/resize.
 # DO NOT port from bsl_console:
-#   full bsl_query / dcs_query, metadata, snippets, code lens, debug, compare, V8Proxy/click bridge,
-#   themes bsl-white / bsl-dark (we use vs / vs-dark / hc-black).
+#   full bsl_query / dcs_query, metadata, snippets, code lens, debug, compare,
+#   themes bsl-white / bsl-dark (we use vs / vs-dark / hc-black), TEMP *.html as primary load.
 # Light Monarch bsl (keywords/comments/strings only, no metadata) — OK via bsl-language.js.
 # MUST keep after any bump:
-#   languages json | rest | bsl | plaintext + rest-language.js + bsl-language.js
-#   window API: init, updateText, getText, setLanguageMode, setReadOnly, setTheme, formatDocument, …
+#   languages json | rest | bsl | plaintext
+#   #V8_request + window.V8Proxy (fetch/sendResponse); ready / requestExport / exportText / setState
 #   workers stub; default theme vs, fontSize 15, formatOnPaste true
-#   single HTML -> CommonTemplate.OneSniffer_MonacoEditorSingle (единственный макет в конфигурации)
+#   single HTML -> CommonTemplate.OneSniffer_MonacoEditorSingle
 #   bump OneSniffer_РедакторКодаКлиентСервер.ВерсияМакетаРедактора()
-#   no configuration metadata in JS; no ZIP maket; no АдресСтатики
+#   load: web HTML string / thin IB-nav + temp storage (not TEMP file path)
 # Commands:
 #   cd monaco-html; npm i; npm run build; cd ..; .\tools\sync-monaco-maket.ps1
 # =============================================================================

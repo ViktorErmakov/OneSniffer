@@ -22,4 +22,4 @@ Default theme: **`vs`** (светлая), fontSize 15, formatOnPaste true.
 ## Импорт паттернов из salexdv/bsl_console
 
 См. комментарий в начале `build.ps1` и `documentation/monaco-editor-update.md` § «Чеклист».
-Не переносить полный bsl/метаданные/V8Proxy.
+Не переносить полный bsl/метаданные из bsl_console. Канал с 1С — **V8Proxy + `#V8_request`** (см. `.cursor/rules/html-v8proxy-bridge.mdc`).

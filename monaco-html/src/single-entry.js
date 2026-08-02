@@ -300,39 +300,167 @@ import editorCss from 'monaco-editor/min/vs/editor/editor.main.css';
     },
   };
 
-  root.OneSnifferMonacoBootstrap = function () {
-    createEditor();
-    root.init = init;
-    root.updateText = updateText;
-    root.setContent = setContent;
-    root.getText = getText;
-    root.eraseText = eraseText;
-    root.setReadOnly = setReadOnly;
-    root.getReadOnly = getReadOnly;
-    root.setLanguageMode = setLanguageMode;
-    root.setTheme = setTheme;
-    root.setFontSize = setFontSize;
-    root.minimap = minimap;
-    root.wordWrap = wordWrap;
-    root.showLineNumbers = showLineNumbers;
-    root.hideLineNumbers = hideLineNumbers;
-    root.setOption = setOption;
-    root.getOption = getOption;
-    root.formatDocument = formatDocument;
-    root.applyState = applyState;
-    if (container) {
-      container.setAttribute('data-monaco-ready', '1');
+  function ensureRequestButton() {
+    if (typeof document === 'undefined') {
+      return null;
     }
+    // Как в Kanban editor-html: статическая #V8_request в разметке.
+    var req = document.querySelector('#V8_request');
+    if (!req) {
+      req = document.createElement('button');
+      req.id = 'V8_request';
+      req.type = 'button';
+      req.style.display = 'none';
+      if (document.body) {
+        document.body.appendChild(req);
+      }
+    } else if (!req.getAttribute('type')) {
+      req.type = 'button';
+    }
+    return req;
+  }
+
+  // Программный click во время синхронного выполнения inline-скрипта / до
+  // подписки хоста на ПриНажатии часто теряется. Quill Kanban шлёт importTasks
+  // с DOMContentLoaded; у нас страница тяжёлая — дополнительно откладываем.
+  function scheduleHostCallback(fn) {
+    if (typeof setTimeout === 'function') {
+      setTimeout(fn, 0);
+    } else {
+      fn();
+    }
+  }
+
+  function parseResponseData(data) {
+    if (typeof data !== 'string') {
+      return data;
+    }
+    if (!data) {
+      return {};
+    }
+    try {
+      return JSON.parse(data);
+    } catch (e) {
+      return { text: data };
+    }
+  }
+
+  function handleSetState(data) {
+    data = parseResponseData(data) || {};
+    if (data.options) {
+      applyOptionsObject(data.options);
+    }
+    if (data.language !== undefined) {
+      setLanguageMode(data.language);
+    }
+    if (data.readOnly !== undefined) {
+      setReadOnly(data.readOnly);
+    }
+    if (data.text !== undefined) {
+      updateText(data.text);
+    }
+    if (data.formatJson) {
+      formatDocument();
+    }
+  }
+
+  function handleApplyOptions(data) {
+    data = parseResponseData(data) || {};
+    if (data.options) {
+      applyOptionsObject(data.options);
+    } else {
+      applyOptionsObject(data);
+    }
+  }
+
+  // Канал 1С ↔ HTML: fetch → скрытая #V8_request.click(); ответ — sendResponse из BSL.
+  // Сигнатура как у Kanban Quill: fetch(eventName, value) → value в textContent.
+  root.V8Proxy = {
+    fetch: function (eventName, value) {
+      var req = ensureRequestButton();
+      if (!req) {
+        return;
+      }
+      req.value = eventName || '';
+      if (eventName === 'exportText') {
+        req.textContent = getText();
+      } else if (value !== undefined && value !== null) {
+        req.textContent = typeof value === 'string' ? value : JSON.stringify(value);
+      } else {
+        req.textContent = '';
+      }
+      req.click();
+    },
+    sendResponse: function (eventName, data) {
+      if (eventName === 'requestExport') {
+        root.V8Proxy.fetch('exportText');
+        return;
+      }
+      if (eventName === 'setState' || eventName === 'init') {
+        handleSetState(data);
+        return;
+      }
+      if (eventName === 'applyOptions') {
+        handleApplyOptions(data);
+        return;
+      }
+      if (eventName === 'setText') {
+        handleSetState(data);
+      }
+    },
   };
 
-  if (typeof document !== 'undefined') {
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', function () {
+  root.OneSnifferMonacoBootstrap = function () {
+    try {
+      createEditor();
+      // Внутренний API оставлен для отладки; контракт с 1С — только V8Proxy.
+      root.init = init;
+      root.updateText = updateText;
+      root.setContent = setContent;
+      root.getText = getText;
+      root.eraseText = eraseText;
+      root.setReadOnly = setReadOnly;
+      root.getReadOnly = getReadOnly;
+      root.setLanguageMode = setLanguageMode;
+      root.setTheme = setTheme;
+      root.setFontSize = setFontSize;
+      root.minimap = minimap;
+      root.wordWrap = wordWrap;
+      root.showLineNumbers = showLineNumbers;
+      root.hideLineNumbers = hideLineNumbers;
+      root.setOption = setOption;
+      root.getOption = getOption;
+      root.formatDocument = formatDocument;
+      root.applyState = applyState;
+      if (container) {
+        container.setAttribute('data-monaco-ready', '1');
+      }
+    } catch (bootErr) {
+      if (typeof console !== 'undefined' && console.error) {
+        console.error('OneSnifferMonacoBootstrap', bootErr);
+      }
+    }
+    // Handshake как Quill importTasks, но отложенно — иначе ПриНажатии не доходит.
+    scheduleHostCallback(function () {
+      root.V8Proxy.fetch('ready');
+    });
+  };
+
+  function scheduleBootstrap() {
+    var run = function () {
+      scheduleHostCallback(function () {
         root.OneSnifferMonacoBootstrap();
       });
+    };
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', run);
     } else {
-      root.OneSnifferMonacoBootstrap();
+      run();
     }
+  }
+
+  if (typeof document !== 'undefined') {
+    scheduleBootstrap();
   }
 
   root.addEventListener('resize', function () {

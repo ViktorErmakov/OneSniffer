@@ -1,0 +1,111 @@
+---
+description: "Canonical 1C ↔ HTML field tunnel (V8Proxy + #V8_request). ALWAYS load before touching Monaco / HTMLDocumentField / editor bridge."
+alwaysApply: true
+---
+# 1C ↔ HTML bridge (V8Proxy) — mandatory model
+
+**Single source of truth** for communication between 1C managed forms and HTML pages in `ПолеHTMLДокумента` (Monaco and any future HTML UI). Pattern taken from Kanban_for_1C; **do not invent alternatives**.
+
+If a task touches `OneSniffer_РедакторКода*`, `monaco-html/`, `HTMLDocumentField`, `Документ.defaultView`, or form handlers of HTML fields — follow this file. Violating the model (direct `window.*` API from BSL, TEMP-file navigation as the primary load path, sync `getText` without `requestExport`) is forbidden.
+
+**Dual MCP:** EDT MCP + `user-v8std` required for every change to this bridge (same rule as `AGENTS.md`).
+
+## Transport (two directions)
+
+### JS → 1C (request)
+
+1. HTML **must** contain a hidden button:
+
+```html
+<button id="V8_request" type="button" style="display:none"></button>
+```
+
+Do **not** add `#V8_response` (dead in the reference project).
+
+2. Page exposes `window.V8Proxy.fetch(eventName, params)`:
+   - `button.value` = command name (`ready`, `exportText`, …);
+   - large payload → `button.textContent` (e.g. full editor text);
+   - small structured params → HTML attributes (names **lowercase**) or one `payload` attribute with JSON;
+   - then `button.click()`.
+
+3. 1C handles **`ПриНажатии` (`OnClick`)** on the HTML field — not URL hacks, not `postMessage`, not polling.
+   - Branch on `ДанныеСобытия.Button` / `Element` with `id = "V8_request"`.
+   - Read `value` + `textContent` / `attributes`.
+   - Set `СтандартнаяОбработка = Ложь`.
+
+### 1C → JS (response)
+
+1. Only through `ЭлементПолеHTML.Документ.defaultView["V8Proxy"].sendResponse(Событие, Пакет)`.
+2. Implement in `OneSniffer_РедакторКодаКлиент.ОтправитьОтвет`.
+3. Guard `V8Proxy = Неопределено` (page not ready).
+4. Structures/arrays → `ЗаписатьЗначениеJSON`; plain strings as-is.
+5. **Forbidden:** calling `defaultView.updateText` / `getText` / `init` / other Monaco globals from BSL.
+
+## Command vocabulary (Monaco / OneSniffer)
+
+| Direction | Event (`value` / `sendResponse` name) | Payload | Meaning |
+|---|---|---|---|
+| JS→1C | `ready` | — | Page bootstrapped; 1C must push pending `setState` |
+| JS→1C | `exportText` | `textContent` = editor text | Answer to `requestExport` |
+| 1C→JS | `requestExport` | `""` | Ask JS to `fetch('exportText')` |
+| 1C→JS | `setState` | JSON `{text, language, readOnly, options, formatJson}` | Init / full patch |
+| 1C→JS | `applyOptions` | JSON options | Theme, font, wrap, minimap, … |
+
+**No `textChanged` push** (project decision): dirty/export only on demand via `requestExport` → `exportText`.
+
+## Read text before an action (e.g. «Выполнить запрос»)
+
+Mandatory continuation — **never** sync `getText` from BSL:
+
+```
+1С: ОтправитьОтвет(Поле, "requestExport", "")
+JS:  V8Proxy.fetch("exportText")  // textContent = getText()
+1С:  ПриНажатии → exportText → сохранить текст → продолжить действие (ОписаниеОповещения)
+```
+
+Public API: `OneSniffer_РедакторКодаКлиент.ЗапроситьТекстРедактора(Форма, ИмяПоля, ОписаниеОповещения)`.
+
+## Loading HTML into the field (Kanban pattern)
+
+| Client | Value of the HTML form attribute |
+|---|---|
+| Web | Raw HTML string |
+| Thin / thick | `ПолучитьНавигационнуюСсылкуИнформационнойБазы() + "/" + АдресВременногоХранилища` |
+
+- Maket: `CommonTemplate.OneSniffer_MonacoEditorSingle` (BinaryData).
+- Server only: `OneSniffer_РедакторКода.ЗагрузитьПриложение` — web vs thin via `ОбщегоНазначения.ЭтоВебКлиент()` (project decision at extension compatibility 8.3.16; Kanban’s `КлиентскоеПриложение.ТипПриложения()` needs 8.3.21+). Call from `ПриСозданииНаСервере`, assign **directly** into HTML field attributes.
+- **`ПриОткрытии` must not load / prepare HTML fields.**
+- Editor body text reaches the page **only** via `ПриНажатии` → `ready` / `ОтправитьОтвет` (`setState`), not by rewriting the HTML attribute on the client.
+- **Forbidden:** client `ОбеспечитьЗагрузкуМакета`, TEMP `*_single.html`, `#Если ВебКлиент` load branches on the client, `ДокументСформирован` as init.
+
+## Readiness
+
+- Page calls `V8Proxy.fetch('ready')` after Monaco bootstrap.
+- **Defer the click** (`setTimeout(..., 0)` after `DOMContentLoaded` / when `readyState` is already past `loading`). A synchronous `.click()` while the huge inline script still runs (or before the HTML field host wires `OnClick`) does **not** raise `ПриНажатии`. Kanban Quill fires `importTasks` from `DOMContentLoaded`; Monaco must additionally defer because the bundle is much larger and 1C may finish the document before the script ends.
+- 1C keeps **pending state on the form** (not `Перем` in a common module) until `ready`, then `setState`.
+- No `ДокументСформирован` handlers on Monaco fields.
+- Hidden button: `<button id="V8_request" type="button" style="display:none">`.
+
+## HTML constraints
+
+- One self-contained HTML file (JS/CSS inlined). External `<script src>` / `<link>` will not resolve inside the field.
+- Workers stubbed (WebKit / 1C HTML field).
+- Protocol attribute keys: **lowercase**.
+
+## Where the code lives
+
+| Layer | Location |
+|---|---|
+| JS proxy + `#V8_request` | `monaco-html/src/single-entry.js` (+ build → `dist/editor.single.html`) |
+| Client bridge | `CommonModule.OneSniffer_РедакторКодаКлиент` |
+| Server maket prep | `CommonModule.OneSniffer_РедакторКода` |
+| Shared options / version | `CommonModule.OneSniffer_РедакторКодаКлиентСервер` |
+| Forms | `ЛогиТрафика.Форма.Список`, `ЛогиТрафика.Форма.Просмотр` — each HTML field: **`OnClick` → `*ПриНажатии`** |
+
+## Agent checklist (before merge)
+
+1. New HTML↔1C signal? → only `#V8_request` + `ПриНажатии` or `ОтправитьОтвет` / `sendResponse`.
+2. Need editor text in 1C? → `ЗапроситьТекстРедактора` + continuation; no `defaultView.getText()`.
+3. Push state to editor? → `ОтправитьОтвет(..., "setState"|"applyOptions", ...)`.
+4. Load page? → web string / IB nav + temp storage; not TEMP file path.
+5. Update `documentation/monaco-editor-update.md` + `PROJECT.md` when the protocol changes.
