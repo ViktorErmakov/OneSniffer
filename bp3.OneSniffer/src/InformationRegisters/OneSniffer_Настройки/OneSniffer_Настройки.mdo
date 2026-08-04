@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:InformationRegister xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="22b404d3-9acf-44c9-af86-0188c80e7f4c">
+  <producedTypes>
+    <selectionType typeId="1b700f29-9b7d-468c-88af-db2f603a04a6" valueTypeId="d9f124ad-9fd6-4b7c-8224-792f86877c6f"/>
+    <listType typeId="8b84aae7-2f78-428d-adb2-16bdb4eb62de" valueTypeId="791c9bef-3b5d-4aad-901f-716abda45510"/>
+    <managerType typeId="16055748-ee63-4a61-82c1-dc78f2a7040c" valueTypeId="a38f1f47-26f7-4510-b482-87ee650149b6"/>
+    <recordSetType typeId="dcc6cba2-c0d8-474b-b8d9-0bbf2c0b4c83" valueTypeId="c375153c-0acc-4e38-b4e9-7e3fbc03e1d7"/>
+    <recordKeyType typeId="d3649572-cdf6-4506-b55d-f522edbeb031" valueTypeId="f7c71d4c-3f99-4676-9e1a-eb36fcc72043"/>
+    <recordType typeId="3cc88169-4965-44f4-8c9f-8b7922ba650c" valueTypeId="a8561b2b-2cb0-4879-a509-3284d799c95e"/>
+    <recordManagerType typeId="bb46726f-9def-4cce-984d-cb438d3b7392" valueTypeId="e9a1af70-748c-459e-be51-dcafbc922d82"/>
+  </producedTypes>
+  <name>OneSniffer_Настройки</name>
+  <synonym>
+    <key>ru</key>
+    <value>Настройки OneSniffer</value>
+  </synonym>
+  <useStandardCommands>true</useStandardCommands>
+  <editType>InDialog</editType>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <objectPresentation>
+    <key>ru</key>
+    <value>Настройка OneSniffer</value>
+  </objectPresentation>
+  <listPresentation>
+    <key>ru</key>
+    <value>Настройки OneSniffer</value>
+  </listPresentation>
+  <resources uuid="8e8bd355-2c1d-4bce-b3e6-057cb89eb5b6">
+    <name>Значение</name>
+    <synonym>
+      <key>ru</key>
+      <value>Значение</value>
+    </synonym>
+    <type>
+      <types>ValueStorage</types>
+    </type>
+  </resources>
+  <dimensions uuid="f571f1f4-910a-4c69-8ec9-b824250f08ea">
+    <name>Ключ</name>
+    <synonym>
+      <key>ru</key>
+      <value>Ключ</value>
+    </synonym>
+    <type>
+      <types>String</types>
+      <stringQualifiers>
+        <length>50</length>
+      </stringQualifiers>
+    </type>
+  </dimensions>
+</mdclass:InformationRegister>

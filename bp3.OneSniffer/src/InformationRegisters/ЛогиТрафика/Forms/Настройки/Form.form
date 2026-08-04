@@ -357,6 +357,49 @@
           <horizontalStretch>false</horizontalStretch>
         </extInfo>
       </items>
+      <items xsi:type="form:FormField">
+        <name>УсекатьДлинныйBase64</name>
+        <id>570</id>
+        <title>
+          <key>ru</key>
+          <value>Усекать длинный Base64 в редакторе</value>
+        </title>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <dataPath xsi:type="form:DataPath">
+          <segments>УсекатьДлинныйBase64</segments>
+        </dataPath>
+        <titleLocation>Right</titleLocation>
+        <toolTip>
+          <key>ru</key>
+          <value>Если включено — длинные base64 (в т.ч. Authorization) заменяются маркером …[base64,N] в тексте для UI. Выключите, чтобы править полный токен и повторять запрос.</value>
+        </toolTip>
+        <toolTipRepresentation>ShowBottom</toolTipRepresentation>
+        <extendedTooltip>
+          <name>УсекатьДлинныйBase64РасширеннаяПодсказка</name>
+          <id>571</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <contextMenu>
+          <name>УсекатьДлинныйBase64КонтекстноеМеню</name>
+          <id>572</id>
+          <autoFill>true</autoFill>
+        </contextMenu>
+        <type>CheckBoxField</type>
+        <editMode>Enter</editMode>
+        <showInHeader>true</showInHeader>
+        <headerHorizontalAlign>Left</headerHorizontalAlign>
+        <showInFooter>true</showInFooter>
+        <extInfo xsi:type="form:CheckBoxFieldExtInfo"/>
+      </items>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -485,7 +528,7 @@
         <titleLocation>Right</titleLocation>
         <toolTip>
           <key>ru</key>
-          <value>С какой даты читать журнал регистрации (константа OneSniffer_ДатаЧтенияЖР)</value>
+          <value>С какой даты читать журнал регистрации</value>
         </toolTip>
         <toolTipRepresentation>ShowBottom</toolTipRepresentation>
         <extendedTooltip>
@@ -617,40 +660,6 @@
     <items xsi:type="form:FormGroup">
       <name>Группа1</name>
       <id>556</id>
-      <items xsi:type="form:Decoration">
-        <name>СообщениеКонстантыНедоступны</name>
-        <id>553</id>
-        <title>
-          <key>ru</key>
-          <value>Константы недоступны в текущей версии платформы, укажите срок</value>
-        </title>
-        <visible>true</visible>
-        <enabled>true</enabled>
-        <userVisible>
-          <common>true</common>
-        </userVisible>
-        <extendedTooltip>
-          <name>СообщениеКонстантыНедоступныРасширеннаяПодсказка</name>
-          <id>555</id>
-          <type>Label</type>
-          <autoMaxWidth>true</autoMaxWidth>
-          <autoMaxHeight>true</autoMaxHeight>
-          <extInfo xsi:type="form:LabelDecorationExtInfo">
-            <horizontalAlign>Left</horizontalAlign>
-          </extInfo>
-        </extendedTooltip>
-        <contextMenu>
-          <name>СообщениеКонстантыНедоступныКонтекстноеМеню</name>
-          <id>554</id>
-          <autoFill>true</autoFill>
-        </contextMenu>
-        <type>Label</type>
-        <autoMaxWidth>true</autoMaxWidth>
-        <autoMaxHeight>true</autoMaxHeight>
-        <extInfo xsi:type="form:LabelDecorationExtInfo">
-          <horizontalAlign>Left</horizontalAlign>
-        </extInfo>
-      </items>
       <items xsi:type="form:FormField">
         <name>СрокХранения</name>
         <id>28</id>
@@ -2046,10 +2055,10 @@
     <savedData>true</savedData>
   </attributes>
   <attributes>
-    <name>КонстантыДоступны</name>
+    <name>УсекатьДлинныйBase64</name>
     <title>
       <key>ru</key>
-      <value>Константы доступны</value>
+      <value>Усекать длинный Base64 в редакторе</value>
     </title>
     <id>51</id>
     <valueType>
@@ -2061,6 +2070,7 @@
     <edit>
       <common>true</common>
     </edit>
+    <savedData>true</savedData>
   </attributes>
   <formCommands>
     <name>Готово</name>

@@ -1493,7 +1493,7 @@
           </extInfo>
         </items>
         <items xsi:type="form:FormField">
-          <name>РазмерОтвета</name>
+          <name>Размер</name>
           <id>112</id>
           <visible>true</visible>
           <enabled>true</enabled>
@@ -1501,10 +1501,10 @@
             <common>true</common>
           </userVisible>
           <dataPath xsi:type="form:DataPath">
-            <segments>Список.РазмерОтвета</segments>
+            <segments>Список.Размер</segments>
           </dataPath>
           <extendedTooltip>
-            <name>РазмерОтветаРасширеннаяПодсказка</name>
+            <name>РазмерРасширеннаяПодсказка</name>
             <id>114</id>
             <type>Label</type>
             <autoMaxWidth>true</autoMaxWidth>
@@ -1514,7 +1514,7 @@
             </extInfo>
           </extendedTooltip>
           <contextMenu>
-            <name>РазмерОтветаКонтекстноеМеню</name>
+            <name>РазмерКонтекстноеМеню</name>
             <id>113</id>
             <autoFill>true</autoFill>
           </contextMenu>
@@ -2507,7 +2507,7 @@
 	ЛогиТрафика.Содержание КАК Содержание,
 	ЛогиТрафика.Длительность КАК Длительность,
 	ЛогиТрафика.КодОтвета КАК КодОтвета,
-	ЛогиТрафика.РазмерОтвета КАК РазмерОтвета,
+	ЛогиТрафика.Размер КАК Размер,
 	ВЫБОР
 		КОГДА ЛогиТрафика.Входящий = ИСТИНА
 			ТОГДА 0

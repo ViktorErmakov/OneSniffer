@@ -17,7 +17,6 @@
   <content>CommonPicture.OneSniffer_Стрелки</content>
   <content>CommonCommand.OneSniffer_ЛогиТрафика</content>
   <content>CommonPicture.OneSniffer_Настройки</content>
-  <content>Constant.OneSniffer_ДатаЧтенияЖР</content>
   <content>ScheduledJob.OneSniffer_ОчисткаЛоговТрафика</content>
   <content>CommonPicture.OneSniffer_ПослатьЗапрос</content>
   <content>CommonPicture.OneSniffer_ПросмотретьЛог</content>
@@ -34,4 +33,5 @@
   <content>CommonTemplate.OneSniffer_MonacoEditorSingle</content>
   <content>CommonPicture.OneSniffer_ЛоготипТекстКартинка</content>
   <content>CommonPicture.OneSniffer_ЛоготипКартинка</content>
+  <content>InformationRegister.OneSniffer_Настройки</content>
 </mdclass:Subsystem>

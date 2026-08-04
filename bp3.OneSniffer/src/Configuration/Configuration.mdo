@@ -25,7 +25,7 @@
   <configurationExtensionCompatibilityMode>8.3.16</configurationExtensionCompatibilityMode>
   <configurationExtensionPurpose>AddOn</configurationExtensionPurpose>
   <scriptVariant>Russian</scriptVariant>
-  <version>0.0.0.5</version>
+  <version>0.0.0.6</version>
   <briefInformation>
     <key>ru</key>
     <value>Логирование трафика HTTP</value>
@@ -69,9 +69,9 @@
   <httpServices>HTTPService.OneSniffer_Демо</httpServices>
   <scheduledJobs>ScheduledJob.OneSniffer_ОчисткаЛоговТрафика</scheduledJobs>
   <commonCommands>CommonCommand.OneSniffer_ЛогиТрафика</commonCommands>
-  <constants>Constant.OneSniffer_ДатаЧтенияЖР</constants>
   <enums>Enum.МетодHTTP</enums>
   <enums>Enum.НаправлениеHTTPЛога</enums>
   <enums>Enum.НазначениеЛога</enums>
   <informationRegisters>InformationRegister.ЛогиТрафика</informationRegisters>
+  <informationRegisters>InformationRegister.OneSniffer_Настройки</informationRegisters>
 </mdclass:Configuration>

@@ -184,7 +184,7 @@
     <fillValue xsi:type="core:UndefinedValue"/>
   </resources>
   <resources uuid="62a22b46-3ab6-4653-a5f5-3c5ff8412599">
-    <name>РазмерОтвета</name>
+    <name>Размер</name>
     <synonym>
       <key>ru</key>
       <value>Размер, кб</value>
