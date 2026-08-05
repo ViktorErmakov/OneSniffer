@@ -125,6 +125,34 @@
           <textEdit>true</textEdit>
         </extInfo>
       </items>
+      <items xsi:type="form:FormGroup">
+        <name>КоманднаяПанельСписок</name>
+        <id>539</id>
+        <visible>true</visible>
+        <enabled>true</enabled>
+        <userVisible>
+          <common>true</common>
+        </userVisible>
+        <title>
+          <key>ru</key>
+          <value>Командная панель список</value>
+        </title>
+        <extendedTooltip>
+          <name>КоманднаяПанельСписокРасширеннаяПодсказка</name>
+          <id>540</id>
+          <type>Label</type>
+          <autoMaxWidth>true</autoMaxWidth>
+          <autoMaxHeight>true</autoMaxHeight>
+          <extInfo xsi:type="form:LabelDecorationExtInfo">
+            <horizontalAlign>Left</horizontalAlign>
+          </extInfo>
+        </extendedTooltip>
+        <type>CommandBar</type>
+        <extInfo xsi:type="form:CommandBarExtInfo">
+          <horizontalAlign>Left</horizontalAlign>
+          <commandSource>Item.Список</commandSource>
+        </extInfo>
+      </items>
       <visible>true</visible>
       <enabled>true</enabled>
       <userVisible>
@@ -995,12 +1023,21 @@
         </dataPath>
         <defaultItem>true</defaultItem>
         <titleLocation>None</titleLocation>
-        <excludedCommands>Create</excludedCommands>
         <excludedCommands>Copy</excludedCommands>
+        <excludedCommands>Delete</excludedCommands>
+        <excludedCommands>ShowMultipleSelection</excludedCommands>
+        <excludedCommands>OutputList</excludedCommands>
+        <excludedCommands>Create</excludedCommands>
         <excludedCommands>Change</excludedCommands>
+        <excludedCommands>LoadDynamicListSettings</excludedCommands>
         <excludedCommands>ChangeHistory</excludedCommands>
+        <excludedCommands>SaveDynamicListSettings</excludedCommands>
+        <excludedCommands>CopyToClipboard</excludedCommands>
         <excludedCommands>SearchHistory</excludedCommands>
+        <excludedCommands>DynamicListStandardSettings</excludedCommands>
         <excludedCommands>SearchEverywhere</excludedCommands>
+        <excludedCommands>Refresh</excludedCommands>
+        <excludedCommands>ListSettings</excludedCommands>
         <items xsi:type="form:FormField">
           <name>Дата</name>
           <id>16</id>
@@ -2415,12 +2452,10 @@
   </handlers>
   <excludedCommands>Abort</excludedCommands>
   <excludedCommands>Cancel</excludedCommands>
-  <excludedCommands>CancelSearch</excludedCommands>
   <excludedCommands>Change</excludedCommands>
   <excludedCommands>Copy</excludedCommands>
   <excludedCommands>Create</excludedCommands>
   <excludedCommands>DynamicListStandardSettings</excludedCommands>
-  <excludedCommands>Find</excludedCommands>
   <excludedCommands>Ignore</excludedCommands>
   <excludedCommands>LoadDynamicListSettings</excludedCommands>
   <excludedCommands>No</excludedCommands>
@@ -2431,6 +2466,12 @@
   <excludedCommands>SaveValues</excludedCommands>
   <excludedCommands>ShowMultipleSelection</excludedCommands>
   <excludedCommands>Yes</excludedCommands>
+  <excludedCommands>ChangeHistory</excludedCommands>
+  <excludedCommands>OpenFromMainServer</excludedCommands>
+  <excludedCommands>OpenFromStandaloneServer</excludedCommands>
+  <excludedCommands>CancelSearch</excludedCommands>
+  <excludedCommands>FindByCurrentValue</excludedCommands>
+  <excludedCommands>Find</excludedCommands>
   <autoSaveDataInSettings>Use</autoSaveDataInSettings>
   <autoUrl>true</autoUrl>
   <group>Vertical</group>

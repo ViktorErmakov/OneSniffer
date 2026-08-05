@@ -252,6 +252,7 @@ Load the corresponding file when the task matches the rule's scenario.
 - **tooling-playbooks** — EDT MCP playbooks per task type. File: `.cursor/rules/tooling-playbooks.mdc`.
 - **edt-first-search** — EDT-first search before Grep/Glob on project source. File: `.cursor/rules/edt-first-search.mdc`.
 - **html-v8proxy-bridge** — mandatory 1C ↔ HTML field tunnel (`V8Proxy`, `#V8_request`, `ПриНажатии`, load via `ЗагрузитьПриложение`). Always-on. File: `.cursor/rules/html-v8proxy-bridge.mdc`.
+- **html-field-commands** — portable BSL API for HTML field commands (`ОбработчикПриНажатии`, `ОтправитьОтвет`, `УстановитьТекстРедактора`, `ЗапроситьТекстРедактора`, deferred 0.1s fill). Always-on; copy-identical for other projects. File: `.cursor/rules/html-field-commands.mdc`.
 
 **Dual MCP (hard).** For any 1C work in this project (BSL, metadata, forms, Monaco bridge, validation, platform API questions): use **both** EDT MCP Server **and** `user-v8std` in the same task. Do not implement or “finish” such work with only one of them.
 

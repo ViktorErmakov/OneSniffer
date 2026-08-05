@@ -10,6 +10,8 @@ If a task touches `OneSniffer_РедакторКода*`, `monaco-html/`, `HTMLD
 
 **Dual MCP:** EDT MCP + `user-v8std` required for every change to this bridge (same rule as `AGENTS.md`).
 
+**How forms invoke commands** (portable BSL API, identical algorithms): `.cursor/rules/html-field-commands.mdc`.
+
 ## Transport (two directions)
 
 ### JS → 1C (request)

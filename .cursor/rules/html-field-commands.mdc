@@ -1,0 +1,149 @@
+---
+description: "Portable BSL API for HTMLDocumentField commands via V8Proxy (sendResponse / ПриНажатии). Copy-identical algorithms for any 1C project."
+alwaysApply: true
+---
+
+# HTML field commands (V8Proxy) — portable invocation API
+
+**Purpose:** identical algorithms and function shapes so this rule can be copied into another 1C project without inventing a second bridge. Transport details (`#V8_request`, load via temp storage / web string) — see `html-v8proxy-bridge.mdc`.
+
+**Forbidden:** `Документ.defaultView.getText` / `updateText` / `init` from BSL; sync read of editor text; inventing `postMessage` / URL-hash / polling as the primary channel.
+
+**Naming in this rule:** module prefix is `РедакторКодаКлиент` (in OneSniffer: `OneSniffer_РедакторКодаКлиент`). Keep signatures and body logic identical; only the common-module name may change.
+
+---
+
+## 1. Form wiring (every HTML field)
+
+1. Event **`ПриНажатии` / `OnClick`** → form procedure that calls:
+
+```bsl
+РедакторКодаКлиент.ОбработчикПриНажатии(ЭтотОбъект, Элемент, ДанныеСобытия, СтандартнаяОбработка);
+```
+
+2. No `ДокументСформирован` as init for the editor page.
+3. Pending editor state lives **on the form** (attribute / structure cache), not in a common-module `Перем`.
+
+---
+
+## 2. JS → 1C: `ОбработчикПриНажатии` (algorithm)
+
+```
+1. If ДанныеСобытия = Неопределено → return
+2. If Href filled → СтандартнаяОбработка = Ложь; open link; return
+3. Button = ДанныеСобытия.Button; if empty → ДанныеСобытия.Element
+4. If Button = Неопределено → return
+5. If Button.id <> "V8_request" → return
+6. СтандартнаяОбработка = Ложь
+7. Событие = Строка(Button.value)
+8. Branch:
+   - "ready"      → flush pending setState for this field
+   - "exportText" → Текст = Button.textContent; complete waiting ОписаниеОповещения for field name
+```
+
+Canonical export procedure signature:
+
+```bsl
+Процедура ОбработчикПриНажатии(Форма, Элемент, ДанныеСобытия, СтандартнаяОбработка) Экспорт
+```
+
+---
+
+## 3. 1C → JS: `ОтправитьОтвет` (algorithm)
+
+```
+1. If ЭлементПолеHTML = Неопределено → return
+2. Try: Прокси = ЭлементПолеHTML.Документ.defaultView["V8Proxy"]
+3. If Прокси = Неопределено → return (page not ready)
+4. Serialize Ответ:
+   - Структура / Соответствие / Массив (и фиксированные) → JSON string
+   - ДвоичныеДанные → Base64Строка
+   - else → Строка(Ответ)
+5. Прокси.sendResponse(Событие, Пакет)
+```
+
+```bsl
+Процедура ОтправитьОтвет(Знач ЭлементПолеHTML, Знач Событие, Знач Ответ) Экспорт
+```
+
+**Never** call other `defaultView` methods from BSL.
+
+---
+
+## 4. Command vocabulary (must stay identical)
+
+| Direction | Event name | Payload | Meaning |
+|---|---|---|---|
+| JS→1C | `ready` | — | Page bootstrapped; 1C pushes pending `setState` |
+| JS→1C | `exportText` | `textContent` = editor text | Answer to `requestExport` |
+| 1C→JS | `requestExport` | `""` | Ask JS to `fetch("exportText")` |
+| 1C→JS | `setState` | JSON `{text, language, readOnly, options, formatJson}` | Full patch / init |
+| 1C→JS | `applyOptions` | JSON options | Theme, font, wrap, minimap, … |
+
+No continuous `textChanged` push: dirty/export only via `requestExport` → `exportText`.
+
+---
+
+## 5. Public BSL API (how forms call commands)
+
+### Push text / language / read-only → `УстановитьТекстРедактора`
+
+```
+1. Update pending state on form (text, language, readOnly, options)
+2. If page already ready → ОтправитьОтвет(Поле, "setState", Пакет)
+3. Else wait for "ready" (same pending state)
+```
+
+```bsl
+Процедура УстановитьТекстРедактора(Форма, ИмяПоля, Текст, Язык = "",
+	ТолькоПросмотр = Неопределено, НастройкиРедактора = Неопределено) Экспорт
+```
+
+### Read text before an action → `ЗапроситьТекстРедактора`
+
+**Mandatory continuation — never sync getText:**
+
+```
+1С: ЗапроситьТекстРедактора(Форма, ИмяПоля, ОписаниеОповещения)
+   → store ОписаниеОповещения in form cache by field name
+   → ОтправитьОтвет(Поле, "requestExport", "")
+JS: V8Proxy.fetch("exportText")  // textContent = getText()
+1С: ПриНажатии → exportText → ВыполнитьОбработкуОповещения(ОписаниеОповещения, Текст)
+```
+
+```bsl
+Процедура ЗапроситьТекстРедактора(Форма, ИмяПоля, ОписаниеОповещения) Экспорт
+```
+
+### Apply options only → `ОтправитьОтвет(..., "applyOptions", Опции)`
+
+Same serializer as `ОтправитьОтвет`.
+
+---
+
+## 6. UX: deferred heavy fill (list / toggle panels)
+
+When showing HTML editors or switching list rows must feel instant:
+
+1. Update **visibility / commands / marks** immediately (`ИзменитьВидимостьДоступность` and similar).
+2. Fill Monaco / push `setState` **deferred**:
+
+```bsl
+ОтключитьОбработчикОжидания("ОтложенноеОбновлениеСодержания");
+ПодключитьОбработчикОжидания("ОтложенноеОбновлениеСодержания", 0.1, Истина);
+```
+
+3. On rapid row change: disconnect + reconnect (only last row wins).
+4. On hide panel: disconnect pending handler; do not push `setState`.
+
+Do **not** load server text / call `УстановитьТекстРедактора` before flipping visibility when the user toggles a content panel.
+
+---
+
+## 7. Agent checklist
+
+1. New signal? → only `#V8_request` + `ПриНажатии` or `ОтправитьОтвет` / `sendResponse`.
+2. Need text in 1C? → `ЗапроситьТекстРедактора` + continuation.
+3. Push state? → `УстановитьТекстРедактора` / `ОтправитьОтвет(..., "setState"|"applyOptions", ...)`.
+4. Snappy UI around heavy HTML? → visibility first, fill after `0.1` idle handler.
+5. Porting to another project? → copy this file + `html-v8proxy-bridge.mdc`; keep algorithms/signatures; rename only the common module.
