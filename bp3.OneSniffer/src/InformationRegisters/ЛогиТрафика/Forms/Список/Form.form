@@ -552,6 +552,35 @@
               <name>ГруппаТестовыеМеню</name>
               <id>525</id>
               <items xsi:type="form:Button">
+                <name>ТестКартинкаКнопка</name>
+                <id>551</id>
+                <title>
+                  <key>ru</key>
+                  <value>Unsplash — картинка (GET)</value>
+                </title>
+                <visible>true</visible>
+                <enabled>true</enabled>
+                <userVisible>
+                  <common>true</common>
+                </userVisible>
+                <extendedTooltip>
+                  <name>ТестКартинкаКнопкаРасширеннаяПодсказка</name>
+                  <id>552</id>
+                  <type>Label</type>
+                  <autoMaxWidth>true</autoMaxWidth>
+                  <autoMaxHeight>true</autoMaxHeight>
+                  <extInfo xsi:type="form:LabelDecorationExtInfo">
+                    <horizontalAlign>Left</horizontalAlign>
+                  </extInfo>
+                </extendedTooltip>
+                <commandName>Form.Command.ТестовыйЗапрос</commandName>
+                <representation>Auto</representation>
+                <autoMaxWidth>true</autoMaxWidth>
+                <autoMaxHeight>true</autoMaxHeight>
+                <placementArea>UserCmds</placementArea>
+                <representationInContextMenu>Auto</representationInContextMenu>
+              </items>
+              <items xsi:type="form:Button">
                 <name>ТестОшибкаКнопка</name>
                 <id>529</id>
                 <title>
@@ -3215,6 +3244,23 @@
     </action>
     <representation>TextPicture</representation>
     <currentRowUse>DontUse</currentRowUse>
+  </formCommands>
+  <formCommands>
+    <name>ТестовыйЗапрос</name>
+    <title>
+      <key>ru</key>
+      <value>Тестовый запрос</value>
+    </title>
+    <id>34</id>
+    <use>
+      <common>true</common>
+    </use>
+    <action xsi:type="form:FormCommandHandlerContainer">
+      <handler>
+        <name>ТестовыйЗапрос</name>
+      </handler>
+    </action>
+    <currentRowUse>Auto</currentRowUse>
   </formCommands>
   <commandInterface>
     <navigationPanel/>
