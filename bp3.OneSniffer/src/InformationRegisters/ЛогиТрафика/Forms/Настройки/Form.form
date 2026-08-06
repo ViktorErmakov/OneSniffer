@@ -334,7 +334,7 @@
           <key>ru</key>
           <value>0 — без лимита; текст обрезается с маркером, бинарные тела заменяются заглушкой; действует при записи тела в РС и/или ЖР; рекомендуется 256–1024</value>
         </toolTip>
-        <toolTipRepresentation>ShowBottom</toolTipRepresentation>
+        <toolTipRepresentation>ShowRight</toolTipRepresentation>
         <extendedTooltip>
           <name>МаксимальныйРазмерТелаРасширеннаяПодсказка</name>
           <id>551</id>
