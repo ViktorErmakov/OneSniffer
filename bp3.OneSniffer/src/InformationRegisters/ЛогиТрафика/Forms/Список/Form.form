@@ -2124,10 +2124,6 @@
           <headerHorizontalAlign>Left</headerHorizontalAlign>
           <showInFooter>true</showInFooter>
           <extInfo xsi:type="form:HtmlFieldExtInfo">
-            <handlers>
-              <event>OnClick</event>
-              <name>HTMLТелоЗапросаПриНажатии</name>
-            </handlers>
             <autoMaxWidth>true</autoMaxWidth>
             <height>2</height>
             <autoMaxHeight>true</autoMaxHeight>
@@ -2213,10 +2209,6 @@
             <headerHorizontalAlign>Left</headerHorizontalAlign>
             <showInFooter>true</showInFooter>
             <extInfo xsi:type="form:HtmlFieldExtInfo">
-              <handlers>
-                <event>OnClick</event>
-                <name>HTMLТелоОтветаПриНажатии</name>
-              </handlers>
               <autoMaxWidth>true</autoMaxWidth>
               <height>1</height>
               <autoMaxHeight>true</autoMaxHeight>
@@ -3285,7 +3277,7 @@
     <id>35</id>
     <toolTip>
       <key>ru</key>
-      <value>Пишет тестовое исключение в журнал регистрации; импорт — только при опции получения исключений из ЖР</value>
+      <value>Подставляет в редактор запрос с исключением; выполнение — кнопкой «Выполнить». Импорт из ЖР — при опции получения исключений</value>
     </toolTip>
     <use>
       <common>true</common>
